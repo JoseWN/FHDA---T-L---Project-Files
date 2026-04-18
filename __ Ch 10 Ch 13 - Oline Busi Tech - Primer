@@ -1,0 +1,360 @@
+ 
+
+Online Business and Information Technology
+==========================================
+
+Exported on: 11/18/2025, 3:21:20 AM
+
+A Primer on Online Business and Technology: From Information Management to Market Dominance
+
+Technology is no longer a peripheral support function but the central strategic driver for all modern businesses, from solo startups to global enterprises. In today's digital landscape, the ability to effectively manage information, leverage online platforms, and secure digital assets is not just an advantage—it is a prerequisite for survival and growth. This guide provides a comprehensive overview of the key concepts, systems, and strategies essential for any professional seeking to navigate and succeed in the interconnected world of business and technology.
+
+Learning Objectives
+
+Upon completing this guide, you will be able to:
+
+• Explain how information technology has transformed business operations and managerial decision-making.
+
+• Describe the essential functions of a company’s Chief Information Officer (CIO) and Information Technology (IT) department.• Differentiate between raw data and useful business intelligence, and identify the systems that manage this transformation.• Recognize the strategic importance of computer networks and distinguish between different network types like LANs, WANs, and VPNs.• Identify the key systems that comprise a company’s management information system, including TPS, MIS, and various management support tools.• Describe how the online environment helps market a business and the primary models of e-commerce transactions.• Understand the critical security and privacy challenges that arise with the increased use of technology in business.• Analyze how emerging trends in social networking, mobile technology, and cloud computing are impacting business strategy.• Outline best practices for protecting digital information and planning for future technology needs. -------------------------------------------------------------------------------- 1.0 The Foundational Role of Technology in Modern BusinessIn the contemporary business environment, information technology (IT) is a primary source of competitive advantage. It is the engine that powers everything from daily transactions to long-range strategic forecasting. For any business professional, understanding the structure and function of a company's technology organization is no longer optional; it is a crucial component of business literacy, enabling more effective collaboration and decision-making across all departments.1.1 The IT Organization: People and PurposeAt the helm of a company's technology strategy is the **Chief Information Officer (CIO)**, an executive-level role responsible for managing all information resources. The CIO oversees the design and development of the firm’s IT systems, makes critical decisions on hardware and software acquisitions, and manages the technology budget to ensure a high return on investment. A modern CIO's role extends to managing company-wide **Enterprise Resource Planning (ERP)** systems that integrate human resources, operations, and technology. They also empower the company's **knowledge workers**—employees who depend on information to perform their roles—by creating new e-business opportunities and establishing governing policies for data privacy and security.Supporting the CIO is the **Information Technology (IT) department**, a team of professionals responsible for the hands-on implementation and maintenance of the company's tech infrastructure. Their duties include:• Keeping all hardware (computers, printers) and software operational and current.• Designing and managing the company’s networks and databases.• Maintaining security against viruses and system failures.• Providing technical training and support to employees.1.2 The Core Asset: Distinguishing Data from InformationThe most fundamental asset managed by the IT organization is data. It is essential to distinguish between data and information.• Data consists of raw, unorganized facts. This can include numbers, words, images, or sounds that, on their own, lack context.• Information is data that has been organized or arranged in a way that makes it useful for decision-making.For instance, a grocery store's raw sales log, which is just a long list of item codes and timestamps, is data. When this is processed into a report showing that milk sales peak between 6:00 and 8:00 AM, it becomes actionable information that can inform staffing and inventory decisions.The process of turning raw data into actionable information relies on a suite of specialized systems and analytical tools.2.0 Transforming Data into Business IntelligenceA business's ability to systematically collect, process, and analyze data is what transforms it into actionable "business intelligence." This intelligence is the foundation of data-driven decision-making, enabling managers to identify trends, forecast outcomes, and respond strategically to market changes. This section explores the key systems and tools that power this transformation at all levels of an organization.2.1 Information Systems for Business OperationsThe journey from data to intelligence begins with capturing the torrent of daily operational details.• A **Transaction Processing System (TPS)** is the starting point. It receives raw data from both internal and external sources—such as sales orders, inventory updates, and shipping records—and prepares it for storage in a database.• Management Information Systems (MIS) and **Management Support Systems (MSS)** then use the data collected by the TPS to help managers make better decisions. These systems process and organize the raw data into reports and analyses that support tactical and strategic planning.2.2 Storing and Organizing DataTo be useful, data must be stored in an organized and accessible manner.• A **Database Management System (DBMS)** is software that acts as an electronic filing system. It allows users to quickly enter, store, organize, select, and retrieve data from collected tables of data.• A **Data Warehouse** is a large, centralized database that combines data from many different databases across an entire company. It is designed specifically to support management decision-making by providing a holistic view of the organization.• A **Data Mart** is a smaller, specialized subset of a data warehouse that focuses on a single area, such as sales or marketing. Data marts are organized for quick analysis of a specific business function.2.3 Analytical Tools for Strategic DecisionsOnce data is organized, managers use specialized tools to analyze it and gain strategic insights.• Decision Support System (DSS): A DSS is an interactive computer model that helps managers answer "what if" questions. A manager could use a DSS to model the financial impact of changing a product's price or opening a new location. Its primary users are tactical and mid-level managers.• Executive Information System (EIS): Similar to a DSS, an EIS is customized for the specific needs of top-level executives. It provides high-level, often graphical, summaries of key business data from both internal and external sources to support strategic, long-term decisions.• Expert System: This system is designed to provide advice similar to what a human consultant would offer. By capturing the knowledge of human experts in a specific domain, it can help managers diagnose problems or make complex decisions.• Online Analysis Package (OLAP): An OLAP is a software application that allows users to combine multiple pieces of information to get a clear, multi-dimensional picture of the business. It is often used for tasks like sales reporting, budgeting, and forecasting.2.4 The Era of Big Data and Data MiningModern technology has enabled analysis on an unprecedented scale.• Data Mining is the process of sifting through large amounts of data to find hidden patterns, relationships, and trends. While powerful for business, this process also carries ethical implications, as it increases the potential for tracking people's daily activities. As a result, many consumers are fighting to regain control of their personal data and how it is used.• Big Data Analysis involves the use of extremely large datasets and specialized tools to extract new insights. For example, the pharmaceutical company **Merck** has used Big Data to identify specific genetic traits in cancer survivors, while the company **Evolv** uses over 500 million data points (like gas prices and social media usage) to help clients like Xerox predict when an employee is likely to quit.These powerful analytical systems, however, are only as effective as the underlying infrastructure that captures and transports the data, demanding robust and secure enterprise networks.3.0 Building the Connected Enterprise: Networks and InfrastructureModern business operations are impossible without computer networks. Connectivity is the digital backbone that enables everything from internal collaboration among employees to global engagement with customers and suppliers. This infrastructure allows for the seamless sharing of data and resources, making the organization more agile and efficient.3.1 Core Network ArchitecturesTwo basic types of networks are distinguished by the geographic area they cover.
+
+Network Type
+
+Definition & Scope
+
+Business Application
+
+Local Area Network (LAN)
+
+A network that connects computers and devices within a limited geographical area, such as a single office building or campus.
+
+Enables employees at one site to share data, printers, and software, fostering local collaboration and resource efficiency.
+
+Wide Area Network (WAN)
+
+A network that connects computers over a larger geographical area, using telecommunications media like phone lines, satellites, or the internet.
+
+Connects geographically dispersed offices, allowing a company to operate as a single, cohesive unit across different cities or countries.
+
+3.2 Corporate and Private NetworksBeyond the basic LAN/WAN distinction, companies use specialized networks for specific strategic purposes.• Intranets: These are private, internal corporate networks that use internet technology to link employees. Intranets are powerful tools for internal communication, document sharing, and collaboration.• Extranets: While an intranet is limited to internal employees, an extranet provides secure access to authorized external parties, such as key customers or vendors, allowing for closer collaboration with business partners.• Enterprise Portals: An enterprise portal is an internal website that provides specific corporate information to a defined user group. They can be business-to-employee (B2E) for internal resources, business-to-business (B2B) for suppliers, or business-to-consumer (B2C) for customers.• Virtual Private Networks (VPNs): A VPN creates a secure, encrypted connection over a public network like the internet. This allows remote employees, such as salespeople and telecommuters, to securely access the company’s private network as if they were physically in the office.3.3 Outsourcing Infrastructure and ServicesMaintaining in-house software and IT infrastructure can be costly and complex. Many businesses turn to outside providers for a more efficient solution. This decision directly reflects the CIO's strategic responsibility to manage budgets and maximize return on investment.• Application Service Providers (ASPs): Companies can subscribe to an ASP to access and use software applications that are hosted by the provider. This eliminates the need to purchase, install, and maintain the software on company computers, offering significant savings.• Managed Service Providers (MSPs): Representing the next generation of ASPs, MSPs offer more comprehensive services, including complete management of a company's network servers and business processes, providing greater customization and support.These interconnected networks form the essential backbone for a firm's presence in the global digital marketplace.4.0 Leveraging the Digital Marketplace: E-Commerce and Online MarketingThe internet has fundamentally reshaped how businesses approach marketing, sales, and customer interaction. The digital marketplace offers unprecedented reach, allowing even small companies to compete on a global scale. This section deconstructs the primary models of online marketing and e-commerce that define modern digital business strategy.4.1 Modern Online Marketing StrategiesOnline advertising refers to any form of advertising that uses the internet to market a message to customers. Key strategies include:• Pay-Per-Click (PPC) Advertising: Advertisers pay a fee only when a user clicks on their ad. PPC ads, such as those offered by Google AdWords, are effective because they can be tied to specific keywords a potential customer is already searching for.• Contextual Advertising: This is a more advanced form of PPC where ads are automatically generated based on the content of a specific webpage. For example, a blog about snowboarding might display ads for Red Bull, ensuring high relevance to the reader.• Viral Marketing: This practice uses social networks, email, and websites to spread brand awareness in a subtle, user-driven way. A successful viral campaign feels less like an overt advertisement and more like a shared experience. The marketing for the film District 9, which used "Humans Only" bus bench signs and a mysterious website, generated massive organic buzz before the film's release. Similarly, **Esurance** ran a short ad after the 2014 Super Bowl offering a $1.5 million drawing via Twitter, generating over 3.8 million uses of their hashtag and significantly boosting their profile at a fraction of the cost of an in-game ad.
+
+Pros of Online Advertising
+
+Cons of Online Advertising
+
+Reasonable Cost: With PPC, costs depend on frequency of use.
+
+Fear of Spam: Users may avoid ads to prevent receiving unsolicited email.
+
+Hitting Target Markets: Contextual advertising ensures a high probability of reaching the intended audience.
+
+Annoyance Factor: Pop-ups and flashing ads can annoy users rather than engage them.
+
+Tracking: Companies can track clicks and locations, providing essential data for future campaigns.
+
+Click Fraud: Competitors can purposefully click on ads to drive up costs for a rival company.
+
+4.2 Models of E-Commerce TransactionsE-commerce transactions are typically categorized into three primary models based on the participants involved.• Business-to-Business (B2B): Involves the exchange of products, services, and information between businesses through various platforms, including company websites (e.g., UPS), **e-procurement** sites for bidding on contracts, **procurement exchanges** (e.g., Alibaba.com), specialized **industry portals** (e.g., CEOExpress.com), **brokering sites**, and **information sites** (infomediaries).• Business-to-Consumer (B2C): Refers to e-commerce that takes place directly between a business and individual consumers. Key models include **online intermediaries** (e.g., Amazon.com), **advertising-based models** that rely on ads on high-traffic sites, **community-based models** that connect users with similar interests (e.g., Steam), and **fee-based models** requiring a subscription (e.g., Netflix).• Consumer-to-Consumer (C2C): Involves transactions between individual consumers, often facilitated by a third party. Examples include online marketplaces with an intermediary like eBay or Etsy, and peer-to-peer (P2P) file and music sharing.4.3 Challenges in E-CommerceDespite its advantages, e-commerce presents unique regulatory hurdles.• Online Sales Tax: The laws regarding the collection of sales tax for online purchases are complex and vary by state. Generally, if a business has a physical presence (like a store or warehouse) in a state, it must collect sales tax from customers in that state. This creates a competitive landscape where some online purchases are tax-free while others are not.• Legal Jurisdiction: The borderless nature of the internet makes legal jurisdiction difficult to define. A company with a global website must contend with the laws of many different countries. While the World Intellectual Property Organization has provided some clarity, determining which country's laws apply in a dispute remains a significant challenge.The vast opportunities of e-commerce are accompanied by significant security and privacy risks that every online business must proactively manage.5.0 Protecting Digital Assets: Security and Privacy in the Information AgeIn an economy driven by information, cybersecurity is a paramount concern. Protecting sensitive data, critical systems, and customer privacy is not just an IT issue—it is a core business responsibility with significant financial and reputational implications. A single security breach can cost a company millions of dollars and irreparably damage consumer trust.5.1 Common Security Threats to BusinessBusinesses face a variety of digital threats from both external and internal sources.• Unauthorized Access & Hackers: Hackers are individuals who gain unauthorized entry into a computer system to disrupt operations or steal data. High-profile data breaches at companies like **Target**, **Sony**, **Home Depot**, **TJ Maxx**, and **Under Armour** have exposed the personal and financial information of tens of millions of customers, costing the companies hundreds of millions of dollars.• Adware and Spyware: Adware is software that displays unwanted pop-up ads, while spyware tracks your personal information and passes it to a third party without your knowledge. The most malicious spyware can capture keystrokes, stealing passwords and other confidential information.• Phishing: This is a common tactic where criminals send emails that appear to be from a legitimate company (like a bank) to trick users into revealing personal information such as credit card numbers and passwords.• Computer Viruses, Worms, and Trojan Horses: These are types of malicious software designed to damage computer systems, steal data, or disrupt networks. They can spread rapidly and cause widespread damage to a company's IT infrastructure.• Software Piracy: The unauthorized copying or use of copyrighted software is a form of theft that exposes a company to legal risks and potential security vulnerabilities from unverified programs.5.2 Internal Challenges: Employee Privacy and EthicsSecurity concerns are not limited to external attacks. Internal policies regarding employee privacy and conduct are equally critical.• Electronic Monitoring: Companies often use electronic monitoring to track employees' keystrokes, emails, and internet browsing histories. While legally permissible on company-owned equipment to prevent theft and fraud, this practice can have negative consequences. Research shows that extensive monitoring can increase employee stress and anxiety, potentially leading to lower morale and job dissatisfaction.• Supporting Ethical Conduct: Technology can also be a tool to foster an ethical workplace. The Sarbanes-Oxley Act requires public companies to have procedures for handling concerns from **whistle-blowers**. Many firms now use their corporate intranets to allow employees to make anonymous reports of misconduct, protecting them from retaliation and allowing the organization to address issues before they escalate.5.3 Building a Proactive Security StrategyAn effective defense against these threats requires a formal, proactive approach. The essential first step for any company is to create formal, written **information security policies**. These policies must have the full support of top management and should clearly define standards for data protection, system access, and employee conduct, providing a clear basis for enforcement and training.While protecting current assets is crucial, long-term success requires looking ahead and leveraging the next wave of technological innovation.6.0 The Future is Now: Emerging Trends in Business TechnologyTechnological change is a constant, accelerating force in the business world. Staying aware of emerging trends is not just about adopting the latest gadget; it is about understanding how new tools and platforms can be strategically deployed to maintain a competitive edge, enhance productivity, and create new market opportunities.6.1 The Impact of Social and Mobile TechnologySocial Media IntegrationBusinesses are integrating social media far beyond simple marketing. **Social media monitoring** tools allow companies to track and analyze the vast number of online conversations about their brands, providing real-time feedback. Internally, **enterprise social networking** platforms like Yammer are used to increase collaboration and speed up decision-making. Furthermore, companies are using **crowdsourcing**—soliciting ideas from the public via the internet—to help develop new products and make business decisions.Crowdsourced Funding (Crowdfunding)Crowdfunding has emerged as a powerful tool for entrepreneurs to raise capital. Platforms like Kickstarter allow individuals to contribute small amounts of money to help a new company or product get started. The virtual-reality headset project **Oculus Rift** began with a Kickstarter campaign to raise $250,000 and ultimately received over $2 million from backers, demonstrating the power of this model to validate and fund innovative ideas.Mobile TechnologyA mobile strategy is now critical for nearly every business. Customers expect to find locations, place orders, and interact with brands via their smartphones. Internally, a mobile workforce requires secure access to email, calendars, and company data from anywhere. Businesses must develop mobile apps and websites that serve both their employees and their customers effectively.6.2 The Power of the Cloud and Distributed ComputingCloud Computing refers to the practice of storing and retrieving information, resources, and software on remote servers accessed via the internet. For businesses, this offers tremendous benefits, including cost-effective data storage, automatic file synchronization across devices, and increased agility. Instead of investing in expensive on-premise servers, companies can access powerful computing resources on an as-needed basis.Grid Computing is a related concept that allows organizations to create a virtual supercomputer by harnessing the unused processing power of multiple computers across a network. By clustering these integrated resources, a business can solve complex computational problems more quickly and efficiently without investing in a dedicated supercomputer.6.3 Other Key Trends Shaping Business• Digital Forensics: This is the science of obtaining and safeguarding electronic evidence from computers and networks. Corporations and government agencies use digital forensics to investigate cybercrimes, trace hackers, and recover data for legal proceedings.• The Distributed Workforce: A growing number of knowledge workers are now "distributed," meaning they work remotely from home or on the road rather than from a central office. Enabled by technologies like VPNs and cloud computing, this model can lead to significant cost savings, increased employee satisfaction, and higher productivity. -------------------------------------------------------------------------------- In conclusion, technology is no longer a separate discipline within a business but a deeply integrated and strategic element of its success. From managing information and connecting with customers to securing digital assets and innovating for the future, a firm’s technological capabilities are inextricably linked to its market performance. Mastering these concepts is therefore a vital imperative for the next generation of business leaders and entrepreneurs.
+
+Information Technology Strategic Plan
+
+This strategic plan serves as a comprehensive roadmap for integrating information technology (IT) into the core functions of our business. In the modern business environment, information is our most critical asset. The effective management of IT is therefore essential for operational viability, informed decision-making, and securing a sustainable competitive advantage. This document outlines the key technological pillars, strategic initiatives, and governance structures necessary to maximize the return on our technology investments and harness the power of information to drive our organization forward.
+
+1.0 Foundational Principles: IT Mission and Guiding Tenets
+
+To ensure that our technology investments are purposeful and effective, it is critical to establish a clear mission and a set of guiding principles for the information technology function. These principles will serve as the framework for all technology-related decisions, ensuring consistent alignment with our overarching business goals and providing a benchmark against which we can measure success.IT Mission StatementTo leverage information technology to effectively manage our organization's collective knowledge, empower data-driven decision-making at all levels, and provide the tools necessary to foster innovation, enhance productivity, and secure a lasting competitive advantage in the marketplace.Guiding Principles• Strategic AlignmentEvery technology initiative will be directly and measurably aligned with the company's strategic goals and business objectives. We will not invest in technology for its own sake, but as a strategic enabler of business outcomes.• Return on Investment (ROI)Every technology initiative must demonstrate a clear and measurable return, with a priority placed on projects that optimize our existing technology assets.• Data-Driven Decision-MakingOur information systems will be architected to transform raw data into actionable business intelligence, empowering all levels of management to make decisions based on evidence and analysis.• Proactive SecurityWe will enforce a multi-layered, proactive security posture, implementing comprehensive policies and advanced technologies to mitigate risks before they materialize and protect our corporate and customer data as a paramount objective.• Operational ExcellenceWe will deploy technology with the explicit goal of streamlining business processes, maximizing operational efficiency, and enhancing communication and collaboration across the organization.This framework of mission and principles will be supported by a robust, secure, and scalable technological infrastructure.2.0 Core Infrastructure: The Technological BackboneA robust and secure infrastructure is the non-negotiable foundation upon which all business operations and strategic initiatives are built. This section defines the strategic architecture of the essential networking, data management, and application components that form our company's IT environment and enable the collection, storage, processing, and sharing of information.2.1 Networking and ConnectivityOur network infrastructure will be engineered for high availability and security to enable efficient information sharing among employees, suppliers, and customers.• Local and Wide Area Networks (LAN/WAN)Our **Local Area Networks (LANs)** will be engineered to provide high-availability, secure access to shared resources, ensuring maximum on-site productivity. All future network designs will prioritize speed, scalability, and security to support business operations without interruption. Our **Wide Area Network (WAN)** will seamlessly connect all company locations, guaranteeing reliable data exchange and operational continuity across our entire geographic footprint.• Corporate IntranetsWe will maintain a secure **Corporate Intranet** as the central hub for internal communication and collaboration. This private network, protected by advanced firewalls, will serve as the authoritative source for corporate information and the primary platform for cross-functional project work.• Virtual Private Networks (VPNs)To support our distributed workforce and secure remote operations, we will provide robust **Virtual Private Network (VPN)** access. This technology will grant our field staff, salespeople, and telecommuters secure, encrypted access to the corporate network, ensuring productivity without compromising security.2.2 Data Management and StorageOur strategy mandates the implementation of systems that transform raw data into organized, actionable information, treating it as a core strategic asset.
+
+System
+
+Strategic Function
+
+Databases
+
+Will serve as the primary electronic filing systems for collecting and organizing all operational data.
+
+Database Management Systems (DBMS)
+
+Will provide the essential software tools to enter, store, organize, and retrieve data, ensuring it is accessible, manageable, and accurate.
+
+Data Warehouse
+
+Will be the central repository that consolidates data from disparate systems across the company, providing a unified source of truth for high-level management decision-making.
+
+Data Marts
+
+Will be deployed as specialized subsets of the data warehouse, architected to provide rapid, targeted analysis for specific business units like sales and marketing.
+
+2.3 Software and Service DeliveryOur approach to software acquisition will utilize a hybrid model, balancing the control of in-house systems with the flexibility and cost-effectiveness of managed services.• In-House Enterprise SoftwareWe will maintain and optimize our core **Enterprise Resource Planning (ERP)** systems. This strategic investment provides a unified, integrated platform to manage all internal operations, from human resources to technology, ensuring a single, authoritative view of the business.• Managed and Application Service Providers (MSP/ASP)For non-core and specialized functions, we will leverage **Application Service providers (ASPs)**. This subscription-based model will allow us to access advanced capabilities with significant savings in infrastructure, time, and staff, preserving capital for strategic investments.This foundational infrastructure provides the power and data required for the Management Information Systems that turn information into strategic decisions.3.0 Management Information Systems (MIS): From Data to DecisionsThe infrastructure detailed in Section 2.0 provides the foundation upon which our Management Information Systems (MIS) are built. The purpose of our MIS is not merely technological; it is the strategic application of that technology to solve business problems and support decision-making at all levels: operational, tactical, and strategic. The process begins with our **Transaction Processing System (TPS)**, which captures raw data from daily business activities and prepares it for storage in our central database, forming the bedrock upon which all higher-level analysis is built.3.1 Systems for Tactical and Strategic SupportOur **Management Support Systems (MSS)** will provide a tiered suite of analytical tools, leveraging the master database to support distinct decision-making needs across the organization.• Decision Support System (DSS)We will deploy **Decision Support Systems (DSS)** to empower tactical management. These interactive tools will enable data-driven scenario modeling, allowing managers to simulate the potential outcomes of operational and marketing decisions before committing company resources.• Executive Information System (EIS)For our senior leadership, we will implement and maintain customized **Executive Information Systems (EIS)**. These systems are specifically designed to provide targeted, high-level information from both internal and external sources, delivering the consolidated intelligence necessary for strategic decision-making.• Expert SystemTo codify and leverage specialized knowledge, we will utilize **Expert Systems**. These tools will provide managers with data-driven advice comparable to a human consultant, assisting with and, where appropriate, automating complex decision-making tasks.3.2 Advanced Business IntelligenceTo gain a deeper competitive advantage, we must move beyond simple reporting and actively seek out hidden insights within our data.• Data MiningWe will execute a formal **Data Mining** strategy, employing sophisticated applications to identify hidden patterns and predictive insights within our data warehouse. This process is central to our goal of transforming warehoused data into actionable business intelligence. By systematically tracking activities, predicting behaviors, and uncovering latent relationships, data mining will become a key driver of our competitive advantage.Having established how we will use information, we must now address the critical imperative of how we will protect it.4.0 Information Security and Risk Management FrameworkOur increasing dependence on computer systems brings a corresponding rise in security risks. A proactive and multi-layered security strategy is therefore essential to protect our IT assets, ensure business continuity, and maintain the trust of our customers and stakeholders. This framework outlines our approach to identifying threats and implementing a robust, proactive defense.4.1 Key Risks to MitigateThis framework is designed to actively defend against and mitigate a range of evolving threats. Our protective measures will be focused on neutralizing the following key risks:1\. Unauthorized Access and Security Breaches (Hacking)2\. Computer Viruses, Worms, and Trojan Horses3\. Phishing and Spyware Attacks4\. Deliberate Damage to Equipment or Information5\. Software and Media Piracy6\. Spam4.2 A Proactive Defense StrategyWe will adopt a proactive approach to prevent security and technical problems before they start. Our defense strategy is built on three core components:• Formal Written Security PoliciesThe first and most critical step is the creation of formal, written security policies. These policies will set clear standards for behavior, provide the basis for enforcement, and must have the full support of top management.• Technical SafeguardsWe will deploy a range of technical safeguards to protect our network and data. This includes the widespread use of industry-standard antivirus software to protect against malware and the implementation of firewalls to prevent unauthorized access to our corporate network.• Employee TrainingRecognizing that human error is a significant vulnerability, we will institute regular training for all employees on proper security procedures. This education will be crucial in mitigating risks from social engineering tactics such as phishing attacks, where attackers trick employees into revealing sensitive information.4.3 Data Privacy and Ethical ConsiderationsIn our pursuit of business intelligence, we face the challenge of balancing the collection of necessary information with the protection of individual consumer privacy rights. We recognize the privacy risks associated with **data mining** and the potential for tracking people's activities. We are committed to finding an ethical balance, ensuring our practices are transparent, and complying with all relevant privacy regulations to safeguard the trust our customers place in us.Protecting our current assets is critical, but true strategic success requires leveraging technology for future growth.5.0 Strategic Initiatives for Future GrowthTo maintain and extend our competitive edge, we must not only manage current technology effectively but also identify and harness emerging trends that drive efficiency, innovation, and market expansion. This section outlines the forward-looking initiatives that will position our business for future success.5.1 Embracing the Distributed WorkforceWe will formally support a distributed workforce model, where employees have the flexibility to work from home or on the road. This strategy offers multiple business benefits, including significant cost savings from reduced office space requirements, more satisfied and productive employees, and increased employee retention rates.5.2 Leveraging Cloud and Grid ComputingTo enhance flexibility and processing power, we will adopt advanced computing models that do not require massive capital investment in physical infrastructure. **Cloud Computing**, the use of remote servers for data storage and software, and **Grid Computing**, which clusters resources into a virtual supercomputer, offer immense computational power and data storage on an as-needed basis. These technologies will provide significant cost advantages and operational agility.5.3 Expanding the Digital FootprintWe will establish a strong and multifaceted online business presence to engage customers and partners through digital channels. Our strategy will incorporate the following models:• Business-to-Consumer (B2C): We will develop and optimize a direct online sales channel, using our website to not only sell products but also to promote our brand and engage directly with our customer base.• Business-to-Business (B2B): We will explore opportunities for e-procurement to streamline our purchasing processes and create specialized industry portals to better serve our business clients and partners.5.4 Harnessing Social Media and Mobile TechnologyA modern business strategy requires a robust presence on the platforms where our customers are most active. Our approach will be two-pronged:1\. Social Media Integration: We will use **social media monitoring** to track our brand perception and stay aware of messages being posted about our products in cyberspace. Furthermore, we will leverage **crowdsourcing** by soliciting ideas from customers on social media to help guide product development and business decisions.2\. Mobile Component: We will implement a comprehensive mobile strategy to both support our remote sales staff with instant access to data and attract customers. This includes developing mobile applications and ensuring a mobile-friendly web presence that allows customers to shop and interact with our brand from any device.Executing these initiatives requires clear leadership and a defined management structure.6.0 IT Governance and ManagementA strategic plan is only effective if supported by a clear governance structure and a continuous planning process. This final section defines the roles, responsibilities, and processes for managing the company's technology resources effectively, ensuring that our IT function remains aligned with business objectives now and in the future.6.1 Leadership and Departmental RolesClear accountability is essential for the successful execution of this plan. The following roles and responsibilities are defined to provide this clarity.• Chief Information Officer (CIO)The CIO is the executive responsible for managing all information resources. This role includes overseeing system design and development, creating and managing IT budgets, and ensuring that all technology investments generate the highest possible return for the business.• IT DepartmentThe IT department is responsible for the day-to-day execution and maintenance of our technology infrastructure. Key operational responsibilities include maintaining hardware and software, managing network security, designing and managing databases, and providing essential technical support and training to all employees.6.2 Fostering a Knowledge-Sharing CultureTo fully leverage our intellectual capital, we will promote a culture of knowledge sharing across the organization. **Knowledge Management (KM)** is the process of researching, gathering, organizing, and sharing our organization’s collective knowledge. By systematically managing this knowledge, we can improve productivity, foster innovation, and gain a significant competitive advantage. To spearhead this effort, we will consider creating a **Chief Knowledge Officer (CKO)** role to lead this initiative.6.3 A Cycle of Continuous PlanningTechnology management and planning is not a one-time event but an ongoing, cyclical process that extends far beyond simply buying new equipment. The IT leadership, in partnership with business unit leaders, will regularly evaluate the company's goals and objectives, assess the performance and value of the existing technology infrastructure, and update this strategic plan accordingly. This continuous cycle will ensure that we are always using the right technology to achieve the highest levels of efficiency and competitive success.
+
+A Beginner's Guide to Business Computer Networks
+
+Introduction: The Digital Lifelines of a Company
+
+In today's world, nearly every job relies on managing information—obtaining it, using it, and sharing it. Understanding the systems that make this possible is a crucial first step for any student of business. At the core of this information flow is the computer network, which is **a group of two or more computer systems linked together by communications channels to share data and information.** This article will clearly explain the four fundamental types of networks that businesses rely on every day—LANs, WANs, Intranets, and VPNs—using simple analogies to make them easy to understand.
+
+1\. Why Networks are the Backbone of Modern BusinessA business simply cannot operate without information about its orders, products, employees, and customers. This vital data is the lifeblood of an organization, guiding everything from daily tasks to major strategic decisions.The core benefit of a computer network is that it allows a company to share this vital data and expensive hardware among many people. This ability to connect and share resources dramatically improves a company's operating efficiency.Think of a business network as the company's central nervous system. It carries critical messages and data to all parts of the corporate "body," allowing different departments to communicate and work together so the entire organization can function as a whole. To manage this flow of information, businesses use different types of networks, each designed for a specific job.2\. The Four Key Types of Business Networks2.1. LAN (Local Area Network): The Office HubA LAN is a network that lets people at one site exchange data and share the use of hardware and software from a variety of computer manufacturers.• Analogy: Imagine a conversation happening within a single office room. Everyone inside can easily talk to one another, use the same printer, and access files from the same filing cabinet. The LAN connects all the devices in that "room," whether it's an office, a floor, or a single building.• Primary Business Benefit:    ◦ Improves operating efficiency by allowing teams to save costs on shared hardware (like printers), collaborate faster with shared file access, and enhance security by keeping data within a single physical location.2.2. WAN (Wide Area Network): Connecting a Sprawling EnterpriseA WAN is a network that connects computers at different sites via telecommunications media such as phone lines, satellites, and microwaves.• Analogy: Think of a national postal service that connects all of a company's office branches across the country or even the world. A WAN acts like this postal service, carrying digital mail and data between locations that are geographically separate.• Primary Business Benefit:    ◦ Connects computers and users located at different, geographically separate sites.2.3. Intranet: The Company's Private Bulletin BoardAn Intranet is an internal corporate-wide area network that uses Internet technology to link employees.• Analogy: An Intranet is like a private, members-only website for a company "club." Only employees with the right password can log in to see company announcements, share project files, and collaborate with colleagues in a secure, internal space.• Functionally, because they connect employees across many locations, Intranets are a specialized type of WAN built for internal use.• Primary Business Benefit:    ◦ Allows a company’s employees to communicate quickly and work on joint projects, regardless of their location, in a secure environment.2.4. VPN (Virtual Private Network): The Secure TunnelA VPN is a network that connects two or more private networks (such as LANs) over a public network, such as the internet.• Analogy: Imagine a secure, armored van that travels on public roads. While the van uses public infrastructure (the roads), its contents are completely private and protected. A VPN creates a similar private "tunnel" over the public internet to safely transport sensitive company information from a remote location back to the main office.• Primary Business Benefit:    ◦ Provides a cost-effective and secure connection for remote users (like salespeople or telecommuters) to access the company's private network as if they were physically in the office.While each network serves a unique role, seeing them side-by-side can make their differences even clearer.3\. At a Glance: Comparing Business Networks
+
+Network Type
+
+Geographic Scope
+
+Primary Purpose
+
+Simple Analogy
+
+LAN
+
+A single site
+
+Sharing data and resources from various manufacturers locally
+
+An office room
+
+WAN
+
+Different sites
+
+Connecting geographically separate locations
+
+A postal service
+
+Intranet
+
+Company-wide
+
+Secure internal employee communication
+
+A private club website
+
+VPN
+
+Over a public network
+
+Secure remote access to a private network
+
+A secure tunnel on a public road
+
+4\. Conclusion: A Network for Every NeedBusinesses use a combination of these different networks to ensure that critical information flows efficiently and securely. This means a salesperson on the road can use a VPN to securely access the company Intranet, a manager at a regional office stays connected via the WAN, and the team at headquarters collaborates seamlessly on the LAN. Ultimately, computer networks are a foundational and essential technology for any modern company's success.
+
+4 Secret Ways Business Tech Quietly Runs Your World
+
+Introduction: Beyond the Screen
+
+From the targeted ads that follow you across the web to the seamless experience of online shopping, corporate technology is a constant and visible part of daily life. We see the final product—the app, the website, the advertisement—but rarely glimpse the vast and complex machinery operating just beneath the surface. This article takes you behind the curtain to reveal four surprising and impactful ways that business technology truly operates, offering key insights that go far beyond what you see on your screen.
+
+\-------------------------------------------------------------------------------- 1\. Your Digital Ghost: Companies Know You Better Than You ThinkThe foundation of modern digital business is a deep understanding of the customer, achieved through the massive collection and analysis of data. This process, known as **data mining**, involves searching for hidden patterns in large groups of data to track and predict people's activities.The Facebook and Cambridge Analytica scandal serves as a stark example of this in action. A seemingly harmless personality quiz app was used to gain access to the data of over 87 million Facebook users. While only 270,000 users downloaded the app, it was also able to collect data from their friends, dramatically expanding its reach. The purpose was not just to gather information, but to build detailed psychological profiles for political targeting.Cambridge Analytica uses a type of psychographic profiling where it mines data collected online to create personality profiles of voters. The profiles are then used to target individuals with specifically tailored political content.Fueling this industry are **data brokers**—companies that gather, analyze, and sell information and inferences about consumers. They collect data from public records, purchase histories, and online behaviors to build profiles that are then sold to other businesses. This isn't just about the data you willingly share. It's about the creation of a 'digital ghost'—a predictive model of your personality, sold to the highest bidder to shape what you buy, who you vote for, and what you believe. -------------------------------------------------------------------------------- 2\. The Marketing Isn't an Ad, It's an ExperienceModern marketing is evolving beyond simple interruption. The most sophisticated campaigns no longer just sell a product; they create an immersive experience that consumers actively participate in. This is the core of **viral marketing**, a subtle technique that relies on the user to be an active participant in spreading a message. It is, in essence, a "Web 2.0 version of old-fashioned word of mouth."A brilliant example is the marketing campaign for the science fiction film District 9. Before the film's release, signs appeared on bus benches reading "Bus bench for humans only," accompanied by a "Report nonhumans" phone number. This number received over 33,000 calls in just two weeks from people playing along with the premise. The campaign's website featured separate content for both "human and nonhuman visitors," drawing people into the film's world long before they entered the theater.Of course, the world of online advertising has a darker side, including tactics like **click fraud**, where a competitor intentionally clicks on ads to drive up costs for a rival company. But the counter-intuitive shift is clear: advertising is transforming from an unwanted interruption into a form of entertainment that consumers willingly seek out and share. -------------------------------------------------------------------------------- 3\. Big Brands Are Listening—IntentlyA company's social media page might look like a simple marketing channel, but it is often the public face of a highly sophisticated intelligence operation. **Social media monitoring** is a critical business activity focused on keeping watch on the external messages and information being spread about products in cyberspace.Dell provides a powerful case study with its Social Media Listening Command Center. Once plagued by the infamous "Dell Hell" rants that went viral among dissatisfied customers, the company transformed its approach. Today, its employees monitor over **25,000 web posts daily**, with thousands of staff members managing more than **40 Facebook pages worldwide**. This isn't just a defensive measure; it's a profit center. The company's @DellOutlet Twitter account has **generated millions of dollars of sales**. Dell has become so proficient that it now **advises other companies** on how to run their own listening centers, turning a brand-management tool into a core business competency.The key takeaway is that a major corporation's social media presence is rarely run by a single intern posting updates. It's a data-driven operation designed to gather intelligence, drive revenue, and monetize its own expertise. -------------------------------------------------------------------------------- 4\. Corporate Security Is a High-Stakes Spy GameThe extreme valuation of corporate data has created a paradoxical security landscape, forcing companies to simultaneously build digital fortresses and, in some cases, deploy their own spies.On the proactive, high-tech side, companies like **Walmart and Target have their own secret in-house digital forensics teams**. Functioning much like a corporate CSI unit, these internal investigators work to safeguard electronic evidence and investigate cybercrimes, protecting the company's digital assets from external threats.On the unethical and illegal side, the pursuit of information can lead to corporate espionage. The Hewlett-Packard (HP) spying scandal is a primary example. In an attempt to find the source of an internal information leak to the media, the company hired private investigators who used illegal tactics to obtain the personal phone records of employees and journalists....the private investigators used pretexting, or lying about one’s identity, to gain access to employees’ personal phone records.This reveals a crucial truth about the modern business landscape: the information a company holds is one of its most valuable assets, and some are willing to employ both crime-scene investigators and illegal spy tactics to control it. -------------------------------------------------------------------------------- Conclusion: Your Place in the Digital MachineThese four domains—data profiling, experiential marketing, real-time social intelligence, and digital espionage—are not separate trends; they are converging into a single, powerful corporate apparatus designed to manage public perception and influence behavior at an unprecedented scale. They quietly influence our decisions, shape our experiences, and define the boundaries of our digital lives.As this invisible architecture becomes the bedrock of our economy, how do we ensure that human autonomy isn't the price of progress?
+
+Study Guide for Online Business and Technology
+
+Quiz: Short-Answer Questions
+
+_Instructions: Please answer the following questions in two to three sentences each, based on the provided source materials._
+
+1\. What is the fundamental difference between "data" and "information" in a business context?2\. Describe the primary functions of a Transaction Processing System (TPS) within a company's information system.3\. Explain the concept of viral marketing and how it differs from traditional advertising campaigns.4\. What are the key distinctions between a Local Area Network (LAN) and a Wide Area Network (WAN)?5\. What purpose does a Decision Support System (DSS) serve for management?6\. Identify the three main types of online business transactions and briefly describe each.7\. What is phishing, and how does it pose a threat to businesses and their customers?8\. Describe the role and responsibilities of a company's Chief Information Officer (CIO).9\. Explain the concept of "crowdsourcing" and provide an example of how a business might use it.10\. What is a Virtual Private Network (VPN) and what is its primary benefit for a business? -------------------------------------------------------------------------------- Answer Key1\. What is the fundamental difference between "data" and "information" in a business context?Data consists of raw, unorganized facts, such as numbers, words, or images, that can be moved and stored. Information, in contrast, is data that has been organized or arranged in a way that makes it useful for analysis and decision-making.2\. Describe the primary functions of a Transaction Processing System (TPS) within a company's information system.A firm's integrated information system begins with its TPS. The TPS receives raw data from both internal and external sources and then prepares and organizes this data for storage in a database.3\. Explain the concept of viral marketing and how it differs from traditional advertising campaigns.Viral marketing is a practice that uses social networks, email, and websites to spread awareness of a brand, functioning like a Web 2.0 version of word-of-mouth. Unlike overt traditional advertising, it is more subtle and depends on the user to be an active participant in spreading the message.4\. What are the key distinctions between a Local Area Network (LAN) and a Wide Area Network (WAN)?The two basic types of networks are distinguished by the geographical area they cover. A LAN lets people at a single site exchange data and share hardware, while a WAN connects computers at different sites via telecommunications media like phone lines or satellites.5\. What purpose does a Decision Support System (DSS) serve for management?A DSS helps managers make decisions by using interactive computer models that describe real-world processes. It is primarily a tool for answering "what if" questions to predict what would happen if a manager made certain changes.6\. Identify the three main types of online business transactions and briefly describe each.The three main types are Business-to-Business (B2B), which involves exchanges between businesses; Business-to-Consumer (B2C), which refers to e-commerce directly between a business and consumers; and Consumer-to-Consumer (C2C), which involves transactions between individual consumers, sometimes with an intermediary.7\. What is phishing, and how does it pose a threat to businesses and their customers?Phishing is a fraudulent practice where hackers trick online users into sending personal information, such as credit card numbers, by impersonating a legitimate company in an email or on a fake website. This can lead to identity theft, fraudulent purchases, and damage to a company's reputation and customer trust.8\. Describe the role and responsibilities of a company's Chief Information Officer (CIO).A CIO is the executive in charge of managing all information resources and processing, including how IT systems are designed, developed, and operated. Responsibilities include making decisions on hardware and software purchases, managing the IT budget, and creating policies for privacy and security.9\. Explain the concept of "crowdsourcing" and provide an example of how a business might use it.Crowdsourcing is the practice of using information and suggestions solicited from people on social media and the internet to help make a business decision. For example, the clothing franchise ModCloth uses a "Be the Buyer" program that encourages customers to vote on clothing styles, helping the company decide whether to place a large manufacturing order.10\. What is a Virtual Private Network (VPN) and what is its primary benefit for a business?A VPN connects two or more private networks (like LANs) over a public network, such as the internet. Its primary benefit is providing a cost-effective and secure connection for remote users, like salespeople or telecommuters, allowing them to access the company's network as if they were on-site. -------------------------------------------------------------------------------- Essay Questions_Instructions: Prepare a detailed response for each of the following prompts, drawing upon the concepts and examples presented in the source materials._1\. Analyze the role of Management Support Systems (MSS) in a modern corporation. Differentiate between Decision Support Systems (DSS), Executive Information Systems (EIS), and Expert Systems, explaining how each supports a different level or type of managerial decision-making.2\. Discuss the primary security challenges that businesses face in the digital age. Detail specific threats such as spyware, phishing, and hackers, and outline the key components of a proactive corporate security strategy.3\. Trace the journey of data from its raw, unorganized state to its use as "business intelligence." Explain the function of each technological component in this process, including databases (DBMS), data warehouses, data marts, and data mining techniques.4\. Examine how social media and mobile technologies have fundamentally altered business marketing, operations, and funding. Use specific examples from the text, such as Dell's use of Twitter or the rise of crowdsourced funding, to illustrate your points.5\. Compare and contrast the three main models of e-commerce transactions: B2B, B2C, and C2C. Provide examples of the different approaches and site types within each category (e.g., e-procurement, online intermediaries, brokering sites). -------------------------------------------------------------------------------- Glossary of Key Terms
+
+Term
+
+Definition
+
+Adware
+
+Any software application that displays banner ads or pop-up ads while a program is running.
+
+Application Service Provider (ASP)
+
+A provider that offers a solution for companies by allowing them to subscribe to and use software applications that reside at the provider's location, saving infrastructure and staff costs.
+
+Artificial Intelligence
+
+The ability of computers to reason and learn to solve problems in a way similar to humans, using what-if reasoning.
+
+Big Data analysis
+
+The use of very large data sets and special software tools to extract information from them, which companies use to find new trends.
+
+Business Intelligence
+
+Useful information derived from collected data that helps businesses make decisions. Software systems like DSS and EIS help turn data into business intelligence.
+
+Business-to-Business (B2B) Transactions
+
+E-commerce transactions that involve the exchange of products, services, and information between businesses on the Internet.
+
+Business-to-Consumer (B2C) Transactions
+
+E-commerce that takes place directly between businesses and consumers.
+
+Chief Information Officer (CIO)
+
+The executive responsible for managing all of a firm's information resources and processing, including IT system design, development, and data center operations.
+
+Chief Knowledge Officer (CKO)
+
+A position created by some companies to head up the effort of knowledge management.
+
+Click Fraud
+
+A drawback of online advertising that occurs when a competing company clicks on a competitor's pay-per-click ads to run up their advertising costs.
+
+Cloud Computing
+
+The practice of storing and retrieving information, resources, and software on remote servers accessed via the Internet, allowing for instant synchronization and backup of data.
+
+Computer Network
+
+A group of two or more computer systems linked together by communications channels to share data and information.
+
+Consumer-to-Consumer (C2C) Transactions
+
+E-commerce transactions that take place between individual consumers, sometimes with the involvement of a third party like eBay.
+
+Contextual Advertising
+
+A form of advertising where ads are automatically generated by the content on a specific site, reaching readers based on the content of a page rather than search results.
+
+Crowdsourced Funding (Crowdfunding)
+
+The use of social networks and the internet to allow a great number of people to contribute small amounts of money to help a company or product get started.
+
+Crowdsourcing
+
+Using information and suggestions solicited from people on social media and the Internet to help a business make a decision.
+
+Data
+
+Raw, unorganized facts that can be moved and stored, consisting of numbers, words, images, or sounds.
+
+Data Mart
+
+Special subsets of a data warehouse that each deal with a single area of data and are organized for quick analysis.
+
+Data Mining
+
+Sophisticated database applications that look for hidden patterns in a group of data, often used to track and predict people's activities.
+
+Data Warehouse
+
+A system that combines many databases from across a whole company into one central database to support management decision-making.
+
+Database
+
+An electronic filing system that collects and organizes data and information.
+
+Database Management System (DBMS)
+
+Software used to quickly and easily enter, store, organize, select, and retrieve data in a database.
+
+Decision Support System (DSS)
+
+A software system that helps managers make decisions using interactive computer models that describe real-world processes, often to answer "what if" questions.
+
+Digital Forensics
+
+A science used to obtain evidence from computers and corporate networks, such as web pages, documents, and e-mails, for investigations.
+
+Distributed Workforce
+
+A workforce model where employees have no permanent office space and work from home or on the road.
+
+Electronic Monitoring
+
+The practice of tracking employees’ keystrokes, e-mails, internet browsing histories, and other digital activities in the workplace.
+
+Enterprise Portal
+
+An internal website that provides proprietary corporate information to a defined user group.
+
+Enterprise Resource Planning (ERP)
+
+Large programs with integrated modules that manage all of a corporation’s internal operations, bringing together human resources, operations, and technology.
+
+Enterprise Social Networking
+
+The application of social network products like Facebook in a corporate setting to increase collaboration and speed up decision-making.
+
+Executive Information System (EIS)
+
+A management support system customized for an individual executive that provides specific information for strategic decisions, often with a more graphical interface than a DSS.
+
+Expert System
+
+A system that gives managers advice similar to what they would get from a human consultant, sometimes taking the place of human experts or assisting them.
+
+Extranet
+
+A network that provides access to authorized customers or vendors outside the company, as opposed to an intranet which is for employees only.
+
+Grid Computing
+
+A system that allows users to work collaboratively on a virtual supercomputer by clustering and integrating computers and applications from multiple sources.
+
+Hacker
+
+An individual who gains unauthorized entry into a computer system, often to disrupt operations or steal protected data.
+
+Information
+
+Data that have been organized or arranged in a way that makes the data useful for decision-making.
+
+Information System (IS)
+
+Also called a Management Information System (MIS), it is focused on applying Information Technology (IT) to solve business and economic problems.
+
+Information Technology (IT)
+
+The equipment and techniques used to manage and process information.
+
+Intranet
+
+A private, internal corporate-wide area network that uses internet technology to link employees, regardless of their location.
+
+Knowledge Management (KM)
+
+The practice of researching, gathering, organizing, and sharing an organization’s collective knowledge to improve productivity, foster innovation, and gain a competitive advantage.
+
+Local Area Network (LAN)
+
+A computer network that lets people at one site exchange data and share the use of hardware and software.
+
+Management Support Systems (MSS)
+
+Systems that use a company's internal master database to perform high-level analyses that help managers make better decisions.
+
+Online Advertising
+
+Any form of advertising that uses the Internet to market its message to customers, including everything from banner ads to social media campaigns.
+
+Online Analysis Package (OLAP)
+
+A software application designed to help people combine multiple pieces of information to get a clear picture of the state of a business, often used for sales reporting and forecasting.
+
+Pay-Per-Click (PPC) Advertising
+
+A form of online advertising where advertisers pay only for the number of times a web surfer clicks on their ads.
+
+Phishing
+
+A common way to trick online users into sending their personal information, like credit card numbers, straight to hackers by impersonating a legitimate entity in an email.
+
+Social Media Monitoring
+
+The practice of keeping watch on the external messages and information being spread about a company's products in cyberspace to analyze patterns and trends.
+
+Spyware
+
+Software that tracks a user's personal information and passes it on to a third party without the user's knowledge, often for fraud or identity theft.
+
+Transaction Processing System (TPS)
+
+A system that receives raw data from internal and external sources and prepares these data for storage in a database. It is the starting point for a firm's integrated information system.
+
+Viral Marketing
+
+A marketing technique that involves using social networks, e-mail, and websites to spread the awareness of a particular brand, relying on users to actively spread the message.
+
+Virtual Private Network (VPN)
+
+A network that connects two or more private networks over a public network, such as the internet, using strong security measures to allow access for authorized users.
+
+Wide Area Network (WAN)
+
+A computer network that connects computers at different sites via telecommunications media such as phone lines, satellites, and microwaves.
