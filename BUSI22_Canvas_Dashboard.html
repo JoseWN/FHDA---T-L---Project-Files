@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BUSI 22 – Principles of Business | Foothill College</title>
+<style>
+  /* ── RESET & BASE ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #f4f6fb;
+    color: #0D1B3E;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ── COLOR TOKENS (Vivid Executive) ── */
+  :root {
+    --cobalt:  #1A3A8F;
+    --orange:  #E85D04;
+    --navy:    #0D1B3E;
+    --white:   #FFFFFF;
+    --light:   #EEF2FF;
+    --mid:     #C7D2EE;
+    --muted:   #5A6A8A;
+    --success: #15803D;
+    --warn:    #92400E;
+    --locked:  #9CA3AF;
+  }
+
+  /* ── WRAPPER ── */
+  .db-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 0 40px;
+  }
+
+  /* ── HERO HEADER ── */
+  .db-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--cobalt) 60%, #2a52b8 100%);
+    color: var(--white);
+    padding: 36px 36px 30px;
+    border-radius: 0 0 16px 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .db-hero::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -40px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(232,93,4,0.18);
+  }
+  .db-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; left: 60px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .db-hero-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .db-hero h1 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .db-hero .course-code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    background: var(--orange);
+    color: var(--white);
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+  .db-hero .instructor {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-top: 6px;
+  }
+  .db-hero .semester-badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 10px 18px;
+    text-align: right;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
+  .db-hero .semester-badge strong {
+    display: block;
+    font-size: 1rem;
+    color: #FFA85C;
+  }
+
+  /* ── QUICK LINKS BAR ── */
+  .ql-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px 24px;
+    background: var(--white);
+    border-bottom: 3px solid var(--light);
+    box-shadow: 0 2px 8px rgba(26,58,143,0.08);
+  }
+  .ql-bar a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--light);
+    color: var(--cobalt);
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1.5px solid var(--mid);
+    transition: background 0.15s, color 0.15s;
+  }
+  .ql-bar a:hover { background: var(--cobalt); color: var(--white); }
+  .ql-bar a.ql-primary {
+    background: var(--orange);
+    color: var(--white);
+    border-color: var(--orange);
+  }
+  .ql-bar a.ql-primary:hover { background: #c94e00; border-color: #c94e00; }
+
+  /* ── SECTION HEADERS ── */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 28px 24px 12px;
+  }
+  .section-head h2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+  .section-head .sh-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cobalt) 0%, transparent 100%);
+    opacity: 0.2;
+    border-radius: 2px;
+  }
+  .section-head .sh-pill {
+    background: var(--cobalt);
+    color: var(--white);
+    font-family: 'Arial', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  /* ── ANNOUNCEMENT BANNER ── */
+  .announcement {
+    margin: 0 24px 4px;
+    background: linear-gradient(90deg, #FFF7ED, #FEF3C7);
+    border-left: 4px solid var(--orange);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.85rem;
+    color: var(--warn);
+  }
+  .announcement strong { color: var(--orange); }
+
+  /* ── MODULE GRID ── */
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+    padding: 0 24px;
+  }
+  .module-card {
+    background: var(--white);
+    border-radius: 12px;
+    border: 1.5px solid var(--mid);
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+    position: relative;
+  }
+  .module-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,58,143,0.13); }
+  .module-card.current { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(232,93,4,0.12); }
+  .module-card.locked { opacity: 0.6; }
+
+  .mc-stripe {
+    height: 5px;
+    background: var(--cobalt);
+  }
+  .module-card.current .mc-stripe { background: var(--orange); }
+  .module-card.locked .mc-stripe  { background: var(--locked); }
+  .module-card.complete .mc-stripe { background: var(--success); }
+
+  .mc-body { padding: 14px 16px; }
+  .mc-week {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .mc-title {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--navy);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .mc-chapters {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.78rem;
+    color: var(--cobalt);
+    margin-bottom: 10px;
+  }
+  .mc-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  .mc-tag {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.68rem;
+    background: var(--light);
+    color: var(--cobalt);
+    border-radius: 4px;
+    padding: 2px 7px;
+    border: 1px solid var(--mid);
+  }
+  .mc-tag.orange { background: #FFF0E8; color: var(--orange); border-color: #FFCBA4; }
+  .mc-tag.green  { background: #ECFDF5; color: var(--success); border-color: #A7F3D0; }
+  .mc-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  .status-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .status-dot::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--locked);
+    display: inline-block;
+  }
+  .status-dot.active::before   { background: var(--cobalt); }
+  .status-dot.current::before  { background: var(--orange); }
+  .status-dot.complete::before { background: var(--success); }
+  .status-dot.active  { color: var(--cobalt); }
+  .status-dot.current { color: var(--orange); }
+  .status-dot.complete{ color: var(--success); }
+
+  .mc-link {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.72rem;
+    color: var(--cobalt);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 4px 10px;
+    border: 1.5px solid var(--mid);
+    border-radius: 6px;
+  }
+  .mc-link:hover { background: var(--cobalt); color: var(--white); }
+
+  /* ── EBB SECTION ── */
+  .ebb-table-wrap {
+    padding: 0 24px;
+    overflow-x: auto;
+  }
+  .ebb-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.83rem;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(26,58,143,0.08);
+  }
+  .ebb-table thead tr {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .ebb-table thead th {
+    padding: 11px 14px;
+    text-align: left;
+    font-size: 0.73rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .ebb-table tbody tr { border-bottom: 1px solid var(--light); }
+  .ebb-table tbody tr:last-child { border-bottom: none; }
+  .ebb-table tbody tr:nth-child(even) { background: #f9faff; }
+  .ebb-table tbody td { padding: 10px 14px; vertical-align: middle; }
+  .ebb-id {
+    font-weight: 700;
+    color: var(--cobalt);
+    white-space: nowrap;
+  }
+  .ebb-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .ebb-badge.not-started { background: var(--light); color: var(--muted); }
+  .ebb-badge.in-progress { background: #FFF0E8; color: var(--orange); }
+  .ebb-badge.complete    { background: #ECFDF5; color: var(--success); }
+  .ebb-badge.upcoming    { background: #EEF2FF; color: var(--cobalt); }
+
+  /* ── GRADING SUMMARY ── */
+  .grade-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    padding: 0 24px;
+  }
+  .grade-card {
+    background: var(--white);
+    border-radius: 10px;
+    border: 1.5px solid var(--mid);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .grade-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .grade-info { flex: 1; }
+  .grade-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .grade-name {
+    font-size: 0.88rem;
+    font-weight: bold;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .grade-pct {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--cobalt);
+    margin-top: 2px;
+  }
+
+  /* ── FOOTER ── */
+  .db-footer {
+    margin: 32px 24px 0;
+    padding: 16px 20px;
+    background: var(--navy);
+    color: rgba(255,255,255,0.6);
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .db-footer strong { color: rgba(255,255,255,0.9); }
+
+  /* ── PART DIVIDER ── */
+  .part-label {
+    margin: 4px 24px 8px;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    padding-left: 4px;
+    border-left: 3px solid var(--orange);
+    padding-left: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .db-hero { padding: 24px 18px 20px; }
+    .db-hero h1 { font-size: 1.35rem; }
+    .ql-bar { padding: 14px 16px; }
+    .module-grid { grid-template-columns: 1fr; padding: 0 16px; }
+    .section-head { padding: 22px 16px 10px; }
+    .ebb-table-wrap { padding: 0 16px; }
+    .grade-grid { padding: 0 16px; }
+    .db-footer { margin: 24px 16px 0; }
+    .part-label { margin: 4px 16px 8px; }
+    .announcement { margin: 0 16px 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="db-wrap">
+
+  <!-- ══ HERO ══ -->
+  <div class="db-hero">
+    <div class="db-hero-top">
+      <div>
+        <span class="course-code">BUSI 22 · CRN: XXXXX</span>
+        <h1>Principles of Business</h1>
+        <div class="instructor">Prof. Jose Wang-Nava, CPA Ret., MBA &nbsp;·&nbsp; Foothill College</div>
+        <div class="instructor" style="margin-top:4px; opacity:0.7;">Hybrid Format &nbsp;·&nbsp; Tuesdays In-Person + Online Canvas</div>
+      </div>
+      <div class="semester-badge">
+        <strong>Spring 2026</strong>
+        12-Week Course<br>
+        Tue 6:30 – 9:20 PM<br>
+        Room: XXXX
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ QUICK LINKS ══ -->
+  <div class="ql-bar">
+    <a class="ql-primary" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">📚 Canvas Modules</a>
+    <a href="https://www.pearsonmylabandmastering.com" target="_blank">📖 MyLab / Pearson</a>
+    <a href="YOUR_CANVAS_COURSE_URL/discussion_topics" target="_blank">💬 Discussions</a>
+    <a href="YOUR_CANVAS_COURSE_URL/assignments" target="_blank">📋 Assignments</a>
+    <a href="YOUR_CANVAS_COURSE_URL/grades" target="_blank">📊 Grades</a>
+    <a href="YOUR_ZOOM_URL" target="_blank">🎥 Virtual Office</a>
+    <a href="YOUR_CANVAS_COURSE_URL/calendar" target="_blank">📅 Calendar</a>
+    <a href="YOUR_CANVAS_COURSE_URL/conversations" target="_blank">✉️ Inbox</a>
+  </div>
+
+  <!-- ══ ANNOUNCEMENT ══ -->
+  <div class="section-head" style="padding-bottom:6px;">
+    <h2>📣 Announcements</h2>
+    <div class="sh-line"></div>
+  </div>
+  <div class="announcement">
+    <strong>Week in Focus:</strong> Update this section each week. Example: "Midterm Exam is Week 6 — Tuesday in-person. Review Chapters 1–5 and complete MyLab practice before class."
+  </div>
+
+  <!-- ══ GRADING OVERVIEW ══ -->
+  <div class="section-head">
+    <h2>🎯 Grading Overview</h2>
+    <div class="sh-line"></div>
+    <span class="sh-pill">Policy</span>
+  </div>
+  <div class="grade-grid">
+    <div class="grade-card">
+      <div class="grade-icon">✅</div>
+      <div class="grade-info">
+        <div class="grade-label">Check-Ins</div>
+        <div class="grade-name">Weekly Attendance &amp; Participation Check-Ins</div>
+        <div class="grade-pct">10%</div>
+      </div>
+    </div>
+    <div class="grade-card">
+      <div class="grade-icon">🎤</div>
+      <div class="grade-info">
+        <div class="grade-label">Class Participation</div>
+        <div class="grade-name">In-Class Discussion &amp; Engagement</div>
+        <div class="grade-pct">10%</div>
+      </div>
+    </div>
+    <div class="grade-card">
+      <div class="grade-icon">📖</div>
+      <div class="grade-info">
+        <div class="grade-label">Reading Checks</div>
+        <div class="grade-name">MyLab Reading &amp; Comprehension Quizzes</div>
+        <div class="grade-pct">15%</div>
+      </div>
+    </div>
+    <div class="grade-card">
+      <div class="grade-icon">🖥️</div>
+      <div class="grade-info">
+        <div class="grade-label">Simulations</div>
+        <div class="grade-name">MyLab Business Simulations</div>
+        <div class="grade-pct">15%</div>
+      </div>
+    </div>
+    <div class="grade-card">
+      <div class="grade-icon">🚀</div>
+      <div class="grade-info">
+        <div class="grade-label">EBBs</div>
+        <div class="grade-name">Entrepreneurship Building Blocks (6 total)</div>
+        <div class="grade-pct">25%</div>
+      </div>
+    </div>
+    <div class="grade-card">
+      <div class="grade-icon">📝</div>
+      <div class="grade-info">
+        <div class="grade-label">Exams</div>
+        <div class="grade-name">Midterm + Final Exam</div>
+        <div class="grade-pct">25%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ COURSE MODULES ══ -->
+  <div class="section-head">
+    <h2>📚 Course Modules</h2>
+    <div class="sh-line"></div>
+    <span class="sh-pill">12 Weeks</span>
+  </div>
+
+  <!-- PART 1 -->
+  <div class="part-label">Part 1 · Business Foundations</div>
+  <div class="module-grid" style="margin-bottom:14px;">
+
+    <div class="module-card complete">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 1</div>
+        <div class="mc-title">Introduction to Business &amp; the American Economy</div>
+        <div class="mc-chapters">Chapter 1</div>
+        <div class="mc-tags">
+          <span class="mc-tag green">✓ Reading Check</span>
+          <span class="mc-tag green">✓ Check-In</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot complete">Complete</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-card complete">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 2</div>
+        <div class="mc-title">Global Business &amp; International Trade</div>
+        <div class="mc-chapters">Chapter 2</div>
+        <div class="mc-tags">
+          <span class="mc-tag green">✓ Reading Check</span>
+          <span class="mc-tag green">✓ Check-In</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot complete">Complete</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-card complete">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 3</div>
+        <div class="mc-title">Business Ethics, Social Responsibility &amp; Sustainability</div>
+        <div class="mc-chapters">Chapter 3</div>
+        <div class="mc-tags">
+          <span class="mc-tag green">✓ Reading Check</span>
+          <span class="mc-tag orange">EBB-1 Due</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot complete">Complete</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-card complete">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 4</div>
+        <div class="mc-title">Entrepreneurship &amp; Legal Forms of Business</div>
+        <div class="mc-chapters">Chapter 4</div>
+        <div class="mc-tags">
+          <span class="mc-tag green">✓ Reading Check</span>
+          <span class="mc-tag green">✓ Simulation</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot complete">Complete</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PART 2 -->
+  <div class="part-label">Part 2 · Business Functions</div>
+  <div class="module-grid" style="margin-bottom:14px;">
+
+    <div class="module-card complete">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 5</div>
+        <div class="mc-title">Management &amp; Leadership</div>
+        <div class="mc-chapters">Chapter 5</div>
+        <div class="mc-tags">
+          <span class="mc-tag green">✓ Reading Check</span>
+          <span class="mc-tag orange">EBB-2 Due</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot complete">Complete</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-card current">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 6 · CURRENT</div>
+        <div class="mc-title">Midterm Exam + Human Resources Management</div>
+        <div class="mc-chapters">Chapters 1–5 Review &amp; Chapter 6</div>
+        <div class="mc-tags">
+          <span class="mc-tag orange">📝 Midterm Exam</span>
+          <span class="mc-tag">Reading Check</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot current">Current</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 7</div>
+        <div class="mc-title">Marketing: Creating &amp; Delivering Value</div>
+        <div class="mc-chapters">Chapter 7</div>
+        <div class="mc-tags">
+          <span class="mc-tag">Reading Check</span>
+          <span class="mc-tag orange">EBB-3 Due</span>
+          <span class="mc-tag">Simulation</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot active">Upcoming</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-card">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 8</div>
+        <div class="mc-title">Operations, Information Technology &amp; Data</div>
+        <div class="mc-chapters">Chapter 8</div>
+        <div class="mc-tags">
+          <span class="mc-tag">Reading Check</span>
+          <span class="mc-tag">Check-In</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot">Locked</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PART 3 -->
+  <div class="part-label">Part 3 · Technology, Finance &amp; Accounting</div>
+  <div class="module-grid" style="margin-bottom:14px;">
+
+    <div class="module-card locked">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 9</div>
+        <div class="mc-title">AI &amp; the Intelligent Organization</div>
+        <div class="mc-chapters">Chapter 9</div>
+        <div class="mc-tags">
+          <span class="mc-tag">Reading Check</span>
+          <span class="mc-tag orange">EBB-4 Due</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot">Locked</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-card locked">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 10</div>
+        <div class="mc-title">Financing &amp; Accounting for Business Operations</div>
+        <div class="mc-chapters">Chapter 10</div>
+        <div class="mc-tags">
+          <span class="mc-tag">Reading Check</span>
+          <span class="mc-tag">Simulation</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot">Locked</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-card locked">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 11</div>
+        <div class="mc-title">Introduction to Financial Management &amp; Securities Markets</div>
+        <div class="mc-chapters">Chapter 11</div>
+        <div class="mc-tags">
+          <span class="mc-tag">Reading Check</span>
+          <span class="mc-tag orange">EBB-5 Due</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot">Locked</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PART 4 -->
+  <div class="part-label">Part 4 · Synthesis &amp; Final Project</div>
+  <div class="module-grid" style="margin-bottom:20px;">
+
+    <div class="module-card locked">
+      <div class="mc-stripe"></div>
+      <div class="mc-body">
+        <div class="mc-week">Week 12</div>
+        <div class="mc-title">Final Exam &amp; EBB Business Plan Presentation</div>
+        <div class="mc-chapters">Comprehensive Review · Chs 1–11</div>
+        <div class="mc-tags">
+          <span class="mc-tag orange">📝 Final Exam</span>
+          <span class="mc-tag orange">EBB-6 Final</span>
+        </div>
+        <div class="mc-status-row">
+          <span class="status-dot">Locked</span>
+          <a class="mc-link" href="YOUR_CANVAS_COURSE_URL/modules" target="_blank">Open →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══ EBB TRACKER ══ -->
+  <div class="section-head">
+    <h2>🚀 Entrepreneurship Building Blocks (EBBs)</h2>
+    <div class="sh-line"></div>
+    <span class="sh-pill">6 Milestones</span>
+  </div>
+  <div class="ebb-table-wrap">
+    <table class="ebb-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Milestone</th>
+          <th>Due Week</th>
+          <th>Canvas Link</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ebb-id">EBB-1</td>
+          <td>Business Concept &amp; Value Proposition</td>
+          <td>Week 3</td>
+          <td><a href="YOUR_CANVAS_COURSE_URL/assignments/EBB1_ID" style="color:#1A3A8F;font-weight:700;" target="_blank">Submit →</a></td>
+          <td><span class="ebb-badge complete">✓ Complete</span></td>
+        </tr>
+        <tr>
+          <td class="ebb-id">EBB-2</td>
+          <td>Management Structure &amp; Team Plan</td>
+          <td>Week 5</td>
+          <td><a href="YOUR_CANVAS_COURSE_URL/assignments/EBB2_ID" style="color:#1A3A8F;font-weight:700;" target="_blank">Submit →</a></td>
+          <td><span class="ebb-badge complete">✓ Complete</span></td>
+        </tr>
+        <tr>
+          <td class="ebb-id">EBB-3</td>
+          <td>Marketing Strategy &amp; Target Market</td>
+          <td>Week 7</td>
+          <td><a href="YOUR_CANVAS_COURSE_URL/assignments/EBB3_ID" style="color:#1A3A8F;font-weight:700;" target="_blank">Submit →</a></td>
+          <td><span class="ebb-badge in-progress">In Progress</span></td>
+        </tr>
+        <tr>
+          <td class="ebb-id">EBB-4</td>
+          <td>Operations &amp; Technology Plan</td>
+          <td>Week 9</td>
+          <td><a href="YOUR_CANVAS_COURSE_URL/assignments/EBB4_ID" style="color:#1A3A8F;font-weight:700;" target="_blank">Submit →</a></td>
+          <td><span class="ebb-badge upcoming">Upcoming</span></td>
+        </tr>
+        <tr>
+          <td class="ebb-id">EBB-5</td>
+          <td>Financial Projections &amp; Funding Strategy</td>
+          <td>Week 11</td>
+          <td><a href="YOUR_CANVAS_COURSE_URL/assignments/EBB5_ID" style="color:#1A3A8F;font-weight:700;" target="_blank">Submit →</a></td>
+          <td><span class="ebb-badge not-started">Not Started</span></td>
+        </tr>
+        <tr>
+          <td class="ebb-id">EBB-6</td>
+          <td>Final Business Plan &amp; Presentation</td>
+          <td>Week 12</td>
+          <td><a href="YOUR_CANVAS_COURSE_URL/assignments/EBB6_ID" style="color:#1A3A8F;font-weight:700;" target="_blank">Submit →</a></td>
+          <td><span class="ebb-badge not-started">Not Started</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <div class="db-footer">
+    <div><strong>BUSI 22 · Principles of Business</strong> &nbsp;|&nbsp; Foothill College · Spring 2026</div>
+    <div>Prof. <strong>Jose Wang-Nava</strong>, CPA Ret., MBA &nbsp;·&nbsp; Questions? Use Canvas Inbox or Virtual Office Hours</div>
+  </div>
+
+</div>
+</body>
+</html>

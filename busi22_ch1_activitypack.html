@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BUSI 22 · Ch 1 · In-Class Activity Pack</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--cobalt:#1A3A8F;--orange:#E85D04;--navy:#0D1B3E;--cream:#F8F6F0;--green:#1a6e3c;--purple:#5C2D8F}
+body{font-family:'DM Sans',sans-serif;background:#f0f2f8;color:var(--navy);line-height:1.6}
+@media print{
+  .no-print{display:none!important}
+  body{background:white}
+  .activity-card{break-inside:avoid;box-shadow:none!important;border:1.5px solid #ccc!important}
+  .page-break{page-break-after:always}
+}
+header{background:var(--navy);color:white;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.header-info h1{font-size:1rem;font-weight:500}
+.header-info p{font-size:.8rem;opacity:.7}
+.btn{background:var(--orange);color:white;border:none;padding:.5rem 1.1rem;border-radius:6px;cursor:pointer;font-size:.85rem;font-weight:500;margin-left:.5rem}
+.btn-outline{background:white;color:var(--cobalt);border:2px solid var(--cobalt)}
+.container{max-width:900px;margin:0 auto;padding:1.5rem}
+.overview-strip{background:white;border-radius:12px;padding:1rem 1.5rem;margin-bottom:1.5rem;display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
+.overview-item{text-align:center}
+.overview-num{font-size:1.5rem;font-weight:700;color:var(--cobalt)}
+.overview-label{font-size:.75rem;color:#666}
+.activity-card{background:white;border-radius:16px;padding:1.5rem 2rem;margin-bottom:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.activity-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:2px solid #eee}
+.activity-num{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:white;flex-shrink:0}
+.a1-color{background:var(--cobalt)}
+.a2-color{background:var(--orange)}
+.a3-color{background:var(--green)}
+.a4-color{background:var(--purple)}
+.activity-meta h2{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy)}
+.activity-meta p{font-size:.82rem;color:#666}
+.badge-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.3rem}
+.badge{padding:3px 10px;border-radius:12px;font-size:.72rem;font-weight:600}
+.badge-time{background:#EEF2FF;color:var(--cobalt)}
+.badge-group{background:#FFF3E0;color:#b84d00}
+.badge-lo{background:#E8F5E9;color:var(--green)}
+.instructions{background:#f8f9ff;border-radius:8px;padding:1rem 1.25rem;margin:.75rem 0}
+.instructions h4{color:var(--cobalt);font-size:.85rem;margin-bottom:.5rem}
+.instructions ol,.instructions ul{padding-left:1.25rem;font-size:.9rem}
+.instructions li{margin:.25rem 0}
+.scenario-box{border:2px solid var(--cobalt);border-radius:10px;padding:1.25rem;margin:.75rem 0;position:relative}
+.scenario-label{position:absolute;top:-10px;left:12px;background:var(--cobalt);color:white;padding:2px 12px;border-radius:10px;font-size:.75rem;font-weight:600}
+.answer-space{border:1px dashed #bbb;border-radius:6px;min-height:60px;padding:.5rem;margin:.5rem 0;font-size:.85rem;color:#aaa}
+.answer-space.tall{min-height:100px}
+.reveal-btn{background:var(--navy);color:white;border:none;padding:.4rem 1rem;border-radius:6px;cursor:pointer;font-size:.8rem;margin-top:.5rem;font-weight:500}
+.reveal-answer{display:none;background:#E8F5E9;border-radius:6px;padding:.75rem 1rem;margin-top:.5rem;font-size:.85rem;border-left:3px solid var(--green)}
+.reveal-answer.show{display:block}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.75rem;margin:.75rem 0}
+.sorting-card{border:2px solid #dde3f0;border-radius:8px;padding:.75rem;text-align:center;cursor:pointer;transition:all .2s;user-select:none}
+.sorting-card:hover{border-color:var(--cobalt)}
+.sorting-card.selected-market{border-color:var(--cobalt);background:#EEF2FF}
+.sorting-card.selected-command{border-color:var(--orange);background:#FFF3E0}
+.sorting-card.selected-mixed{border-color:var(--green);background:#E8F5E9}
+.sort-controls{display:flex;gap:.75rem;margin:.75rem 0;flex-wrap:wrap}
+.sort-btn{padding:.4rem .9rem;border-radius:6px;border:2px solid;cursor:pointer;font-size:.82rem;font-weight:500;background:white}
+.btn-market{border-color:var(--cobalt);color:var(--cobalt)}
+.btn-command{border-color:var(--orange);color:var(--orange)}
+.btn-mixed{border-color:var(--green);color:var(--green)}
+.btn-market.active{background:var(--cobalt);color:white}
+.btn-command.active{background:var(--orange);color:white}
+.btn-mixed.active{background:var(--green);color:white}
+.stake-scenario{display:flex;gap:.75rem;align-items:flex-start;padding:.75rem;border:1px solid #eee;border-radius:8px;margin:.5rem 0}
+.stake-icon{font-size:1.5rem;flex-shrink:0}
+.stake-text p{font-size:.88rem}
+.stake-text select{margin-top:.3rem;padding:.3rem .5rem;border:1.5px solid #dde3f0;border-radius:4px;font-size:.82rem;font-family:'DM Sans',sans-serif}
+.check-score{display:none;background:var(--cobalt);color:white;border-radius:8px;padding:1rem 1.5rem;margin-top:1rem;text-align:center}
+.check-score.show{display:block}
+.timer-strip{background:var(--orange);color:white;border-radius:8px;padding:.5rem 1rem;display:flex;align-items:center;gap:1rem;margin:.75rem 0;font-size:.9rem}
+.timer-num{font-size:1.3rem;font-weight:700;font-variant-numeric:tabular-nums}
+.timer-btn{background:white;color:var(--orange);border:none;padding:.3rem .8rem;border-radius:4px;cursor:pointer;font-size:.8rem;font-weight:600}
+</style>
+</head>
+<body>
+<header class="no-print">
+  <div class="header-info">
+    <h1>BUSI 22 · Ch 1 · In-Class Activity Pack</h1>
+    <p>4 activities · ~75 min total · All LOs covered</p>
+  </div>
+  <div>
+    <button class="btn btn-outline" onclick="window.print()">🖨 Print</button>
+    <button class="btn" onclick="window.scrollTo({top:0})">↑ Top</button>
+  </div>
+</header>
+
+<div class="container">
+
+<div class="overview-strip">
+  <div class="overview-item"><div class="overview-num">4</div><div class="overview-label">Activities</div></div>
+  <div class="overview-item"><div class="overview-num">~75</div><div class="overview-label">Min Total</div></div>
+  <div class="overview-item"><div class="overview-num">8</div><div class="overview-label">LOs Covered</div></div>
+  <div style="flex:1;font-size:.85rem;color:#555">
+    <strong style="color:var(--navy)">Instructor Tip:</strong> Activities 1–3 work best in groups of 3–4. Activity 4 is a whole-class check-for-understanding. Debrief each activity before moving to the next.
+  </div>
+</div>
+
+<!-- ACTIVITY 1 -->
+<div class="activity-card">
+  <div class="activity-header">
+    <div class="activity-num a1-color">1</div>
+    <div class="activity-meta">
+      <h2>The Coffee Cup Challenge</h2>
+      <p>Trace a product through the five factors of production</p>
+      <div class="badge-row">
+        <span class="badge badge-time">⏱ 15 min</span>
+        <span class="badge badge-group">👥 Groups of 3–4</span>
+        <span class="badge badge-lo">LO 1.1 · LO 1.2</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <h4>Instructions for Students</h4>
+    <ol>
+      <li>Your group receives a product (assigned below). As a team, identify <strong>each of the five factors of production</strong> required to bring that product to market.</li>
+      <li>Be specific — don't write "labor." Write "barista earning $17/hr" or "software engineer in Seattle."</li>
+      <li>Pick one factor your group thinks is <em>most critical</em> to your product's existence. Defend your choice.</li>
+      <li>Present your factor map to the class in 2 minutes.</li>
+    </ol>
+  </div>
+
+  <div class="card-grid">
+    <div class="scenario-box" style="margin:0"><div class="scenario-label">Group A</div><strong>🏥 Hospital Visit</strong><br><small>Emergency room, local hospital</small></div>
+    <div class="scenario-box" style="margin:0"><div class="scenario-label">Group B</div><strong>📱 Smartphone</strong><br><small>iPhone or Android, bought at Best Buy</small></div>
+    <div class="scenario-box" style="margin:0"><div class="scenario-label">Group C</div><strong>🍕 Delivered Pizza</strong><br><small>From a local restaurant via DoorDash</small></div>
+    <div class="scenario-box" style="margin:0"><div class="scenario-label">Group D</div><strong>⚡ Electric Bill</strong><br><small>Residential electricity, PG&amp;E</small></div>
+  </div>
+
+  <div style="margin-top:1rem">
+    <div style="font-size:.85rem;font-weight:600;color:var(--cobalt);margin-bottom:.5rem">Factor Map (complete together):</div>
+    <table style="font-size:.83rem;width:100%;border-collapse:collapse">
+      <tr><th style="background:var(--cobalt);color:white;padding:.4rem .75rem">Factor</th><th style="background:var(--cobalt);color:white;padding:.4rem .75rem">Specific to Your Product</th><th style="background:var(--cobalt);color:white;padding:.4rem .75rem">Income Earned</th></tr>
+      <tr><td style="padding:.4rem .75rem;border-bottom:1px solid #eee">Land</td><td style="padding:.4rem .75rem;border-bottom:1px solid #eee;color:#aaa">_________________________</td><td style="padding:.4rem .75rem;border-bottom:1px solid #eee;color:#aaa">Rent</td></tr>
+      <tr><td style="padding:.4rem .75rem;border-bottom:1px solid #eee">Labor</td><td style="padding:.4rem .75rem;border-bottom:1px solid #eee;color:#aaa">_________________________</td><td style="padding:.4rem .75rem;border-bottom:1px solid #eee;color:#aaa">Wages</td></tr>
+      <tr><td style="padding:.4rem .75rem;border-bottom:1px solid #eee">Capital</td><td style="padding:.4rem .75rem;border-bottom:1px solid #eee;color:#aaa">_________________________</td><td style="padding:.4rem .75rem;border-bottom:1px solid #eee;color:#aaa">Interest</td></tr>
+      <tr><td style="padding:.4rem .75rem;border-bottom:1px solid #eee">Entrepreneurship</td><td style="padding:.4rem .75rem;border-bottom:1px solid #eee;color:#aaa">_________________________</td><td style="padding:.4rem .75rem;border-bottom:1px solid #eee;color:#aaa">Profit</td></tr>
+      <tr><td style="padding:.4rem .75rem">Knowledge ★</td><td style="padding:.4rem .75rem;color:#aaa">_________________________</td><td style="padding:.4rem .75rem;color:#aaa">Royalties/Value</td></tr>
+    </table>
+    <div style="margin-top:.75rem;font-size:.85rem;font-weight:600;color:var(--cobalt)">Your group's "most critical" factor and why:</div>
+    <div class="answer-space">Write your defense here...</div>
+  </div>
+
+  <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show')">Show Debrief Notes</button>
+  <div class="reveal-answer">
+    <strong>Instructor debrief:</strong> Ask each group what they chose as the most critical factor. There's no single right answer — the goal is reasoning. Key insight to draw out: <em>Knowledge is increasingly becoming the dominant factor</em> — a small AI startup with no physical factory can disrupt a billion-dollar industry. Connect to the 2025 AI landscape. For the smartphone group: Apple's brand and patents (knowledge) may matter more than its factories (capital) — a powerful discussion point.
+  </div>
+</div>
+
+<!-- ACTIVITY 2 -->
+<div class="activity-card page-break">
+  <div class="activity-header">
+    <div class="activity-num a2-color">2</div>
+    <div class="activity-meta">
+      <h2>Economic System Sort</h2>
+      <p>Classify real-world policies into the right economic system</p>
+      <div class="badge-row">
+        <span class="badge badge-time">⏱ 12 min</span>
+        <span class="badge badge-group">👥 Pairs</span>
+        <span class="badge badge-lo">LO 1.3 · LO 1.4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <h4>Instructions</h4>
+    <ol>
+      <li>Read each scenario card below.</li>
+      <li>Click (or circle on print) whether it best describes a <strong style="color:var(--cobalt)">Market</strong>, <strong style="color:var(--orange)">Command</strong>, or <strong style="color:var(--green)">Mixed</strong> economy.</li>
+      <li>Write one sentence justifying your choice.</li>
+    </ol>
+  </div>
+
+  <div id="sorting-area">
+    <div class="stake-scenario">
+      <div class="stake-icon">📊</div>
+      <div class="stake-text">
+        <p><strong>Scenario A:</strong> The government sets the price of bread and gasoline, and allocates how much each factory must produce each year.</p>
+        <div class="sort-controls">
+          <button class="sort-btn btn-market" onclick="selectSort(this,'market')">Market</button>
+          <button class="sort-btn btn-command" onclick="selectSort(this,'command')">Command</button>
+          <button class="sort-btn btn-mixed" onclick="selectSort(this,'mixed')">Mixed</button>
+        </div>
+        <div class="answer-space" style="min-height:36px">Justification: ___</div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show')">Answer</button>
+        <div class="reveal-answer">✅ <strong>Command Economy.</strong> Government controls prices and production quotas — the defining feature of a command economy (North Korea, historical USSR).</div>
+      </div>
+    </div>
+    <div class="stake-scenario">
+      <div class="stake-icon">🏥</div>
+      <div class="stake-text">
+        <p><strong>Scenario B:</strong> Healthcare is provided by a mix of private hospitals and government Medicare/Medicaid programs. Prices in private markets are largely set by supply and demand, but the government regulates insurance.</p>
+        <div class="sort-controls">
+          <button class="sort-btn btn-market" onclick="selectSort(this,'market')">Market</button>
+          <button class="sort-btn btn-command" onclick="selectSort(this,'command')">Command</button>
+          <button class="sort-btn btn-mixed" onclick="selectSort(this,'mixed')">Mixed</button>
+        </div>
+        <div class="answer-space" style="min-height:36px">Justification: ___</div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show')">Answer</button>
+        <div class="reveal-answer">✅ <strong>Mixed Economy.</strong> Both private markets and government programs coexist — this is the real U.S. healthcare system. Perfect example of a mixed economy.</div>
+      </div>
+    </div>
+    <div class="stake-scenario">
+      <div class="stake-icon">🚗</div>
+      <div class="stake-text">
+        <p><strong>Scenario C:</strong> A used car dealer sets their own prices based on what buyers are willing to pay. If nobody buys at $10,000, they drop to $8,500 until the car sells.</p>
+        <div class="sort-controls">
+          <button class="sort-btn btn-market" onclick="selectSort(this,'market')">Market</button>
+          <button class="sort-btn btn-command" onclick="selectSort(this,'command')">Command</button>
+          <button class="sort-btn btn-mixed" onclick="selectSort(this,'mixed')">Mixed</button>
+        </div>
+        <div class="answer-space" style="min-height:36px">Justification: ___</div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show')">Answer</button>
+        <div class="reveal-answer">✅ <strong>Market Economy.</strong> Price is set by supply and demand — the dealer adjusts price until the market clears. This is equilibrium in action (LO 1.4).</div>
+      </div>
+    </div>
+    <div class="stake-scenario">
+      <div class="stake-icon">⚡</div>
+      <div class="stake-text">
+        <p><strong>Scenario D:</strong> California's Public Utilities Commission sets maximum rates that PG&amp;E can charge for electricity, even though PG&amp;E is a private company.</p>
+        <div class="sort-controls">
+          <button class="sort-btn btn-market" onclick="selectSort(this,'market')">Market</button>
+          <button class="sort-btn btn-command" onclick="selectSort(this,'command')">Command</button>
+          <button class="sort-btn btn-mixed" onclick="selectSort(this,'mixed')">Mixed</button>
+        </div>
+        <div class="answer-space" style="min-height:36px">Justification: ___</div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show')">Answer</button>
+        <div class="reveal-answer">✅ <strong>Mixed Economy.</strong> Private company, but government-regulated pricing. This is how utilities work in the U.S. — regulated markets, not pure markets or command.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ACTIVITY 3 -->
+<div class="activity-card">
+  <div class="activity-header">
+    <div class="activity-num a3-color">3</div>
+    <div class="activity-meta">
+      <h2>Stakeholder Conflict Resolution</h2>
+      <p>Analyze competing stakeholder interests in a real business decision</p>
+      <div class="badge-row">
+        <span class="badge badge-time">⏱ 20 min</span>
+        <span class="badge badge-group">👥 Groups of 4 (one role each)</span>
+        <span class="badge badge-lo">LO 1.5 · LO 1.6 · LO 1.7</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scenario-box">
+    <div class="scenario-label">The Scenario</div>
+    <p style="font-size:.9rem;margin-top:.5rem"><strong>BayFresh Grocery</strong> is a family-owned chain with 4 stores in the South Bay. Facing rising costs and competition from Amazon Fresh, the owner is considering two options:</p>
+    <ul style="margin:.75rem 0 .75rem 1.5rem;font-size:.9rem">
+      <li><strong>Option A:</strong> Convert to a corporation, bring in investors, open 10 new locations, automate checkout (eliminating 40 jobs)</li>
+      <li><strong>Option B:</strong> Stay as a sole proprietorship, raise prices 8%, cut store hours, reduce waste programs</li>
+    </ul>
+  </div>
+
+  <div class="card-grid">
+    <div style="border:2px solid var(--cobalt);border-radius:10px;padding:.75rem">
+      <div style="font-size:.75rem;font-weight:700;color:var(--cobalt);margin-bottom:.5rem">ROLE: OWNER</div>
+      <p style="font-size:.82rem">You want to grow, protect your family's wealth, and keep the business viable. Which option do you recommend and why?</p>
+      <div class="answer-space tall">Your argument...</div>
+    </div>
+    <div style="border:2px solid var(--orange);border-radius:10px;padding:.75rem">
+      <div style="font-size:.75rem;font-weight:700;color:var(--orange);margin-bottom:.5rem">ROLE: EMPLOYEE (checkout worker)</div>
+      <p style="font-size:.82rem">You've worked here 6 years. You have two kids. Option A eliminates your job. What do you argue for and what leverage do you have?</p>
+      <div class="answer-space tall">Your argument...</div>
+    </div>
+    <div style="border:2px solid var(--green);border-radius:10px;padding:.75rem">
+      <div style="font-size:.75rem;font-weight:700;color:var(--green);margin-bottom:.5rem">ROLE: CUSTOMER</div>
+      <p style="font-size:.82rem">You shop here twice a week because you like the staff and the prices. An 8% price increase might push you to Amazon Fresh. What matters most to you?</p>
+      <div class="answer-space tall">Your argument...</div>
+    </div>
+    <div style="border:2px solid var(--purple);border-radius:10px;padding:.75rem">
+      <div style="font-size:.75rem;font-weight:700;color:var(--purple);margin-bottom:.5rem">ROLE: COMMUNITY / CITY</div>
+      <p style="font-size:.82rem">The city cares about local jobs, foot traffic, and tax revenue. The waste reduction program cuts 15 tons of food waste annually. What do you advocate for?</p>
+      <div class="answer-space tall">Your argument...</div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem;background:#f5f7ff;border-radius:8px;padding:1rem">
+    <div style="font-size:.88rem;font-weight:600;color:var(--navy);margin-bottom:.5rem">Group Debrief (all roles): After hearing all arguments, what does your group recommend BayFresh do?</div>
+    <div class="answer-space tall">Group consensus or dissenting positions...</div>
+  </div>
+
+  <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show')">Show Instructor Debrief</button>
+  <div class="reveal-answer">
+    <strong>Key teaching points:</strong> (1) Stakeholder interests genuinely conflict — there's no option that pleases everyone. (2) The <em>form of ownership</em> (LO 1.7) directly determines what options are even available — a sole proprietor can't easily raise capital like a corporation can. (3) The environmental forces (LO 1.5) are what's driving the crisis: economic pressure, technological disruption (Amazon Fresh), and social factors (employee welfare, community impact) are all at play simultaneously.
+  </div>
+</div>
+
+<!-- ACTIVITY 4 - Check for Understanding -->
+<div class="activity-card">
+  <div class="activity-header">
+    <div class="activity-num a4-color">4</div>
+    <div class="activity-meta">
+      <h2>Chapter Check-for-Understanding</h2>
+      <p>Individual rapid-fire quiz — whole class</p>
+      <div class="badge-row">
+        <span class="badge badge-time">⏱ 12 min</span>
+        <span class="badge badge-group">👤 Individual</span>
+        <span class="badge badge-lo">All 8 LOs</span>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:.88rem;margin-bottom:.75rem">Answer each question on your own, then we'll review as a class. <strong>No notes.</strong></p>
+
+  <div id="quiz">
+    <div class="stake-scenario">
+      <div style="flex:1">
+        <p style="font-size:.88rem"><strong>Q1 (LO 1.1):</strong> A local bakery earns $12,000/month in revenue and has $9,500 in costs. Its profit is ___. Is this a successful business? What does this profit signal to the market?</p>
+        <div class="answer-space" style="min-height:48px"></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+        <div class="reveal-answer">Profit = $2,500/mo. Yes — it's covering costs and generating a return. The profit signals: "this community values this bakery — resources should keep flowing here." If it lost money, it would signal the opposite.</div>
+      </div>
+    </div>
+    <div class="stake-scenario">
+      <div style="flex:1">
+        <p style="font-size:.88rem"><strong>Q2 (LO 1.2):</strong> A food delivery startup has: a software algorithm (valued at $2M), a team of 8 developers, 200 gig drivers, leased warehouse space, and an angel investor who took the risk. Name the factor of production for each.</p>
+        <div class="answer-space" style="min-height:60px"></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+        <div class="reveal-answer">Algorithm → Knowledge; Developers → Labor; Drivers → Labor; Warehouse space → Land; Angel investor → Entrepreneurship (and the funding = Capital). Note: the algorithm being worth $2M while maybe costing $80K to build illustrates why Knowledge creates outsized value.</div>
+      </div>
+    </div>
+    <div class="stake-scenario">
+      <div style="flex:1">
+        <p style="font-size:.88rem"><strong>Q3 (LO 1.3):</strong> What three questions does every economic system answer? How does a market economy answer question #1 differently from a command economy?</p>
+        <div class="answer-space" style="min-height:60px"></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+        <div class="reveal-answer">The 3 questions: What to produce? How to produce it? For whom? In a market economy, Q1 is answered by profit signals (businesses produce what people will pay for). In a command economy, the government decides what gets produced regardless of what people want — which often leads to shortages and surpluses.</div>
+      </div>
+    </div>
+    <div class="stake-scenario">
+      <div style="flex:1">
+        <p style="font-size:.88rem"><strong>Q4 (LO 1.5):</strong> Tesla is developing a new battery that doubles EV range at half the cost. Name two environmental forces this impacts and how.</p>
+        <div class="answer-space" style="min-height:60px"></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+        <div class="reveal-answer">Technological (disrupts existing battery supply chains, auto industry), Competitive/Global (intensifies competition with Chinese EV makers like BYD), Economic (could shift consumer spending toward EVs, away from gas vehicles), Natural (reduces emissions, impacts oil demand), Legal/Regulatory (could trigger new EV incentive legislation or new safety standards). Most answers accepted if reasoning is sound.</div>
+      </div>
+    </div>
+    <div class="stake-scenario">
+      <div style="flex:1">
+        <p style="font-size:.88%" style="font-size:.88rem"><strong>Q5 (LO 1.7):</strong> Your friend starts a photography business as a sole proprietor. She's successful and is sued when her photos are used without consent. What's the biggest financial risk to her? How would forming an LLC or corporation change this?</p>
+        <div class="answer-space" style="min-height:60px"></div>
+        <button class="reveal-btn" onclick="this.nextElementSibling.classList.toggle('show')">Reveal</button>
+        <div class="reveal-answer">As a sole proprietor, she has <em>unlimited personal liability</em> — the plaintiff can go after her personal bank account, car, home, savings. As an LLC or corporation, liability is limited to business assets only — her personal assets are protected. This is often the #1 reason successful sole proprietors eventually incorporate.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem;background:var(--navy);color:white;border-radius:8px;padding:1rem 1.5rem">
+    <div style="font-weight:600;margin-bottom:.5rem">Exit Ticket (hand in before leaving):</div>
+    <p style="font-size:.88rem;opacity:.9">In 2–3 sentences: <strong>What is one thing you will do differently in your own life or career because of what you learned in Chapter 1?</strong></p>
+    <div style="border:1px dashed rgba(255,255,255,.4);border-radius:6px;min-height:50px;padding:.5rem;margin-top:.5rem"></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function selectSort(btn,type){
+  const controls=btn.parentElement;
+  controls.querySelectorAll('.sort-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

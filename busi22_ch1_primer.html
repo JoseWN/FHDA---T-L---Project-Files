@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BUSI 22 · Ch 1 · Lesson Primer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--cobalt:#1A3A8F;--orange:#E85D04;--navy:#0D1B3E;--cream:#F8F6F0;--gold:#D4A017;--light:#EEF2FF}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--navy);line-height:1.7}
+.progress-bar{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--cobalt),var(--orange));width:0%;z-index:999;transition:width 0.2s}
+header{background:var(--navy);color:white;padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.header-brand{font-family:'Playfair Display',serif;font-size:1.1rem;opacity:.8}
+.header-title{font-size:1rem;font-weight:500}
+.read-time{background:var(--orange);color:white;padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:600}
+nav{display:flex;gap:0;background:#162850;overflow-x:auto}
+nav a{color:rgba(255,255,255,.7);padding:.6rem 1.2rem;font-size:.85rem;white-space:nowrap;text-decoration:none;transition:all .2s;border-bottom:2px solid transparent}
+nav a:hover,nav a.active{color:white;border-bottom:2px solid var(--orange)}
+.container{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1e3a7a 100%);color:white;padding:3rem 2rem;text-align:center;border-bottom:4px solid var(--orange)}
+.hero-tag{background:var(--orange);color:white;display:inline-block;padding:4px 16px;border-radius:20px;font-size:.8rem;font-weight:600;letter-spacing:.05em;margin-bottom:1rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:.5rem;line-height:1.2}
+.hero p{opacity:.85;font-size:1.05rem;max-width:600px;margin:0 auto}
+.hook-box{background:white;border-left:5px solid var(--orange);border-radius:0 12px 12px 0;padding:1.5rem 2rem;margin:2rem 0;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.hook-box h2{font-family:'Playfair Display',serif;color:var(--orange);font-size:1.4rem;margin-bottom:.75rem}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:1.5rem 0}
+.stat-card{background:var(--navy);color:white;border-radius:12px;padding:1.2rem;text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--orange);display:block}
+.stat-label{font-size:.8rem;opacity:.8;margin-top:.25rem}
+h2.section-title{font-family:'Playfair Display',serif;color:var(--cobalt);font-size:1.5rem;margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid var(--light)}
+.lo-card{background:white;border-radius:12px;border:1px solid #dde3f0;padding:1.25rem 1.5rem;margin:.75rem 0;display:flex;gap:1rem;align-items:flex-start}
+.lo-badge{background:var(--cobalt);color:white;border-radius:8px;padding:6px 12px;font-size:.8rem;font-weight:600;white-space:nowrap;flex-shrink:0}
+.lo-text strong{color:var(--cobalt);display:block;margin-bottom:.25rem}
+.metaphor-box{background:linear-gradient(135deg,var(--cobalt),#2a4faf);color:white;border-radius:16px;padding:2rem;margin:2rem 0}
+.metaphor-box h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:1rem}
+.env-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.75rem;margin-top:1rem}
+.env-card{background:rgba(255,255,255,.15);border-radius:10px;padding:.75rem;text-align:center;font-size:.85rem}
+.env-icon{font-size:1.5rem;display:block;margin-bottom:.3rem}
+.callout{background:var(--light);border-radius:12px;padding:1.25rem 1.5rem;margin:1.5rem 0;border-left:4px solid var(--cobalt)}
+.callout strong{color:var(--cobalt)}
+.table-wrap{overflow-x:auto;margin:1.5rem 0}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th{background:var(--navy);color:white;padding:.6rem 1rem;text-align:left}
+td{padding:.6rem 1rem;border-bottom:1px solid #dde3f0}
+tr:nth-child(even) td{background:#f5f7ff}
+.checklist{background:white;border-radius:12px;border:1px solid #dde3f0;padding:1.5rem 2rem;margin:2rem 0}
+.checklist h3{color:var(--cobalt);font-family:'Playfair Display',serif;margin-bottom:1rem}
+.check-item{display:flex;gap:.75rem;align-items:center;padding:.5rem 0;border-bottom:1px solid #f0f0f0;cursor:pointer}
+.check-item:last-child{border-bottom:none}
+.check-box{width:20px;height:20px;border:2px solid var(--cobalt);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.check-box.checked{background:var(--cobalt);color:white}
+.check-item span{font-size:.9rem}
+.footer-nav{display:flex;justify-content:space-between;align-items:center;margin-top:3rem;padding:1.5rem;background:white;border-radius:12px;border:1px solid #dde3f0}
+.btn{background:var(--cobalt);color:white;padding:.6rem 1.4rem;border-radius:8px;border:none;cursor:pointer;font-size:.9rem;font-weight:500;text-decoration:none;display:inline-block;transition:background .2s}
+.btn:hover{background:#142d6e}
+.btn-outline{background:white;color:var(--cobalt);border:2px solid var(--cobalt)}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="pb"></div>
+<header>
+  <div>
+    <div class="header-brand">BUSI 22 · Principles of Business</div>
+    <div class="header-title">Chapter 1: The Business Environment</div>
+  </div>
+  <div class="read-time" id="rt">~25 min read</div>
+</header>
+<nav id="sidenav">
+  <a href="javascript:void(0)" onclick="navTo('hook')" class="active">The Hook</a>
+  <a href="javascript:void(0)" onclick="navTo('los')">Learning Objectives</a>
+  <a href="javascript:void(0)" onclick="navTo('what-is')">What Is Business?</a>
+  <a href="javascript:void(0)" onclick="navTo('factors')">Factors of Production</a>
+  <a href="javascript:void(0)" onclick="navTo('systems')">Economic Systems</a>
+  <a href="javascript:void(0)" onclick="navTo('environment')">The Environment</a>
+  <a href="javascript:void(0)" onclick="navTo('stakeholders')">Stakeholders</a>
+  <a href="javascript:void(0)" onclick="navTo('ownership')">Ownership Forms</a>
+  <a href="javascript:void(0)" onclick="navTo('ready')">Ready for Class</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">BEFORE CLASS · Lesson Primer</div>
+  <h1>The Invisible System Running Everything</h1>
+  <p>Before Tuesday's class, read this. It will change how you see the world around you.</p>
+</div>
+
+<div class="container">
+
+  <section id="hook">
+    <div class="hook-box">
+      <h2>It Started With a Cup of Coffee</h2>
+      <p>This morning, when you grabbed coffee on the way here, dozens of invisible forces were already at work. Farmers in Colombia harvested beans. A logistics company shipped them. A roasting operation processed them. A barista — earning wages, paying rent — made your drink. You paid a price that covered all of it, plus a little profit for the owner.</p>
+      <p style="margin-top:.75rem">That exchange — simple, fast, unremarkable — is business. And understanding the system behind it is what this course is about.</p>
+      <p style="margin-top:.75rem">Now scale that up. The U.S. economy produces <strong>$28 trillion</strong> in goods and services every year. That's 28 million million dollars. It happens because millions of businesses, governments, households, and workers are constantly making decisions — what to produce, how much to charge, who to hire, where to expand.</p>
+      <p style="margin-top:.75rem"><strong>Chapter 1 gives you the mental map to understand how all of it fits together.</strong></p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card"><span class="stat-num">33.3M</span><div class="stat-label">Small businesses in the U.S.</div></div>
+      <div class="stat-card"><span class="stat-num">61%</span><div class="stat-label">Of U.S. jobs from small business</div></div>
+      <div class="stat-card"><span class="stat-num">$28T</span><div class="stat-label">U.S. GDP — annual output</div></div>
+      <div class="stat-card"><span class="stat-num">5</span><div class="stat-label">Factors that produce everything</div></div>
+    </div>
+  </section>
+
+  <section id="los">
+    <h2 class="section-title">What You'll Be Able to Do After Chapter 1</h2>
+    <p style="margin-bottom:1rem">Eight learning objectives. Each one is a lens that makes the business world clearer.</p>
+    <div class="lo-card"><div class="lo-badge">LO 1.1</div><div class="lo-text"><strong>Define business and explain the role of profit in a market economy</strong>Profit isn't greed — it's the signal that guides resources toward what people value most.</div></div>
+    <div class="lo-card"><div class="lo-badge">LO 1.2</div><div class="lo-text"><strong>Identify and describe the five factors of production</strong>Every product ever made required land, labor, capital, entrepreneurship — and increasingly, knowledge.</div></div>
+    <div class="lo-card"><div class="lo-badge">LO 1.3</div><div class="lo-text"><strong>Compare the three major economic systems</strong>Market, command, and mixed economies answer the same three questions — but very differently.</div></div>
+    <div class="lo-card"><div class="lo-badge">LO 1.4</div><div class="lo-text"><strong>Explain supply, demand, and market equilibrium</strong>Price is information. Markets use it to coordinate millions of decisions simultaneously.</div></div>
+    <div class="lo-card"><div class="lo-badge">LO 1.5</div><div class="lo-text"><strong>Identify the six major components of the business environment</strong>No business operates in a vacuum. Six forces are always shaping what's possible.</div></div>
+    <div class="lo-card"><div class="lo-badge">LO 1.6</div><div class="lo-text"><strong>Describe the primary stakeholders of a business</strong>Every business serves — and is shaped by — multiple groups with competing interests.</div></div>
+    <div class="lo-card"><div class="lo-badge">LO 1.7</div><div class="lo-text"><strong>Compare the three primary forms of business ownership</strong>Sole proprietorship, partnership, corporation — each trades liability for control differently.</div></div>
+    <div class="lo-card"><div class="lo-badge">LO 1.8</div><div class="lo-text"><strong>Explain the role of entrepreneurship and small business in the U.S. economy</strong>Entrepreneurs don't just start companies — they drive innovation and job creation.</div></div>
+  </section>
+
+  <section id="what-is">
+    <h2 class="section-title">LO 1.1 — What Business Actually Is</h2>
+    <p>Here's a definition worth memorizing: <strong>Business is any activity that provides goods or services in exchange for profit.</strong></p>
+    <p style="margin-top:1rem">That definition has two parts that both matter:</p>
+    <ul style="margin:1rem 0 1rem 1.5rem;line-height:2">
+      <li><strong>Goods or services</strong> — tangible products (a car) or intangible actions (a haircut)</li>
+      <li><strong>Profit</strong> — revenue minus all costs. Not revenue. Not sales. What's left after everything is paid.</li>
+    </ul>
+    <div class="callout">
+      <strong>The Profit Signal:</strong> In a market economy, profit is information. When a business earns high profit, it signals: "people value this — send more resources here." When it loses money, it signals: "stop." This is why economists call profit the invisible hand's language. It coordinates billions of decisions without anyone being in charge.
+    </div>
+    <p>Not-for-profit organizations (nonprofits) operate differently — any surplus is reinvested into the mission, not distributed to owners. But they still must generate enough revenue to cover costs — or they cease to exist.</p>
+  </section>
+
+  <section id="factors">
+    <h2 class="section-title">LO 1.2 — The Five Ingredients of Everything Ever Made</h2>
+    <p>Economists identified four classic factors of production. A fifth has emerged in the modern economy:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Factor</th><th>What It Is</th><th>Who Earns It</th><th>Example</th></tr>
+        <tr><td><strong>Land</strong></td><td>All natural resources</td><td>Rent</td><td>Oil, timber, farmland, water</td></tr>
+        <tr><td><strong>Labor</strong></td><td>Human physical &amp; mental work</td><td>Wages</td><td>A nurse, a coder, a driver</td></tr>
+        <tr><td><strong>Capital</strong></td><td>Tools &amp; machines used to produce</td><td>Interest</td><td>Factory equipment, software</td></tr>
+        <tr><td><strong>Entrepreneurship</strong></td><td>Risk-taking &amp; organizing the others</td><td>Profit</td><td>The founder of a startup</td></tr>
+        <tr><td><strong>Knowledge ★</strong></td><td>Information, data, expertise, IP</td><td>Royalties/Value</td><td>A patent, an algorithm, a brand</td></tr>
+      </table>
+    </div>
+    <div class="callout">
+      <strong>★ Why Knowledge Changes Everything:</strong> In the industrial era, whoever controlled land and capital dominated. Today, a 25-year-old with a laptop and an AI tool can outcompete a factory. Knowledge — especially AI-augmented knowledge — is becoming the dominant factor of production of our time.
+    </div>
+  </section>
+
+  <section id="systems">
+    <h2 class="section-title">LO 1.3 — Three Ways to Answer Three Questions</h2>
+    <p>Every economy must answer three questions: <strong>(1) What to produce? (2) How to produce it? (3) For whom?</strong></p>
+    <p style="margin-top:.75rem">Three economic systems answer these questions in three very different ways:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>System</th><th>Who Decides?</th><th>Price Set By</th><th>Real Example</th></tr>
+        <tr><td><strong>Market (Capitalism)</strong></td><td>Individuals &amp; businesses</td><td>Supply &amp; demand</td><td>United States (primarily)</td></tr>
+        <tr><td><strong>Command (Socialism/Communism)</strong></td><td>Government central planners</td><td>Government decree</td><td>North Korea, historical USSR</td></tr>
+        <tr><td><strong>Mixed Economy</strong></td><td>Both market &amp; government</td><td>Mostly market + regulation</td><td>Most countries, including the U.S.</td></tr>
+      </table>
+    </div>
+    <div class="callout">
+      <strong>The U.S. is actually a mixed economy.</strong> We have markets, but also the FDA regulating drugs, minimum wage laws, public schools, and Medicare. Pure market economies and pure command economies exist mostly in textbooks — the real world is always a blend.
+    </div>
+    <p style="margin-top:1rem">Within LO 1.3, you'll also explore <strong>supply and demand</strong>: the mechanism markets use to set prices and allocate goods. When supply exceeds demand, prices fall. When demand exceeds supply, prices rise. Equilibrium is the price where they meet.</p>
+  </section>
+
+  <section id="environment">
+    <h2 class="section-title">LO 1.5 — The Six Forces Shaping Every Business</h2>
+    <p>No business is an island. Six environmental forces constantly push and pull on every organization:</p>
+    <div class="metaphor-box">
+      <h3>Think of It Like Weather for Business</h3>
+      <p>A farmer can't control the weather — but a great farmer reads it, plans for it, and adapts. Business leaders can't control their environment — but the best ones read it better than their competitors.</p>
+      <div class="env-grid">
+        <div class="env-card"><span class="env-icon">💰</span><strong>Economic</strong><br><small>GDP, inflation, interest rates, unemployment</small></div>
+        <div class="env-card"><span class="env-icon">🤖</span><strong>Technological</strong><br><small>AI, automation, digital platforms, data</small></div>
+        <div class="env-card"><span class="env-icon">⚖️</span><strong>Legal/Regulatory</strong><br><small>Laws, regulations, court decisions</small></div>
+        <div class="env-card"><span class="env-icon">🌍</span><strong>Global/Competitive</strong><br><small>Trade, competition, supply chains</small></div>
+        <div class="env-card"><span class="env-icon">👥</span><strong>Social/Cultural</strong><br><small>Demographics, values, consumer trends</small></div>
+        <div class="env-card"><span class="env-icon">🌱</span><strong>Natural</strong><br><small>Climate, resources, sustainability</small></div>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>2025 Example:</strong> Tariffs introduced in early 2025 changed the competitive environment overnight for thousands of businesses — forcing supply chain redesigns, price changes, and strategic pivots. Economic and legal environments collided at once. That's the business environment in action.
+    </div>
+  </section>
+
+  <section id="stakeholders">
+    <h2 class="section-title">LO 1.6 — Who Actually Matters to a Business?</h2>
+    <p>A <strong>stakeholder</strong> is any person or group who has an interest in a business's actions and outcomes. Businesses serve — and are constrained by — multiple stakeholders simultaneously:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Stakeholder</th><th>What They Want</th><th>Their Power</th></tr>
+        <tr><td><strong>Owners / Shareholders</strong></td><td>Profit, return on investment</td><td>Governance, capital withdrawal</td></tr>
+        <tr><td><strong>Employees</strong></td><td>Fair pay, safe conditions, growth</td><td>Labor, union action, turnover</td></tr>
+        <tr><td><strong>Customers</strong></td><td>Value, quality, trust</td><td>Purchase decisions, reviews</td></tr>
+        <tr><td><strong>Suppliers</strong></td><td>Reliable orders, fair payment</td><td>Supply terms, alternatives</td></tr>
+        <tr><td><strong>Government</strong></td><td>Taxes, compliance, public benefit</td><td>Regulation, licensing, taxation</td></tr>
+        <tr><td><strong>Community / Society</strong></td><td>Jobs, environmental responsibility</td><td>Reputation, activism, permits</td></tr>
+      </table>
+    </div>
+    <div class="callout">
+      <strong>The Tension:</strong> What shareholders want (maximum profit) sometimes conflicts with what employees want (higher wages) or what communities want (environmental protection). Managing those tensions is what business leadership actually involves day-to-day.
+    </div>
+  </section>
+
+  <section id="ownership">
+    <h2 class="section-title">LO 1.7 — Three Ways to Own a Business</h2>
+    <p>How a business is legally organized determines who's in control, who's liable, and how it's taxed. Three primary forms:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th></th><th>Sole Proprietorship</th><th>Partnership</th><th>Corporation</th></tr>
+        <tr><td><strong>Owners</strong></td><td>One person</td><td>2 or more</td><td>Shareholders</td></tr>
+        <tr><td><strong>Liability</strong></td><td>Unlimited (personal)</td><td>Usually unlimited</td><td>Limited to investment</td></tr>
+        <tr><td><strong>Taxation</strong></td><td>Pass-through</td><td>Pass-through</td><td>Double (C-Corp)</td></tr>
+        <tr><td><strong>Easiest to start?</strong></td><td>✅ Yes</td><td>Moderate</td><td>Complex</td></tr>
+        <tr><td><strong>Best for growth?</strong></td><td>Limited</td><td>Moderate</td><td>✅ Yes</td></tr>
+        <tr><td><strong>Example</strong></td><td>Freelancer, food truck</td><td>Law firm, accounting firm</td><td>Apple, Target, your bank</td></tr>
+      </table>
+    </div>
+    <div class="callout">
+      <strong>Key Point:</strong> Most businesses start as sole proprietorships because it's easy. Most large businesses become corporations because unlimited liability is too risky when stakes are high. Understanding when to choose which form — and why — is a real business skill.
+    </div>
+  </section>
+
+  <section id="ready">
+    <h2 class="section-title">Ready for Tuesday? Check These Off</h2>
+    <div class="checklist">
+      <h3>Pre-Class Checklist</h3>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box" id="c1"></div><span>I can define "business" in one sentence, including the word "profit"</span></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box" id="c2"></div><span>I can name all five factors of production from memory</span></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box" id="c3"></div><span>I can explain the difference between a market economy and a command economy</span></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box" id="c4"></div><span>I can name at least four of the six environmental forces</span></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box" id="c5"></div><span>I can list three stakeholder groups and what each one wants</span></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box" id="c6"></div><span>I know the key difference between a sole proprietorship and a corporation</span></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box" id="c7"></div><span>I have one real-world question ready to bring to class</span></div>
+      <div class="check-item" onclick="toggle(this)"><div class="check-box" id="c8"></div><span>I understand why the U.S. is technically a mixed economy</span></div>
+    </div>
+    <div class="callout">
+      <strong>What's Coming in Class:</strong> We'll work through real business cases, debate economic systems, analyze current events through the six-environment lens, and practice the ownership decision framework together. Come ready to think out loud.
+    </div>
+    <div class="footer-nav">
+      <span style="color:#666;font-size:.9rem">BUSI 22 · Chapter 1 · Lesson Primer</span>
+      <div style="display:flex;gap:.75rem">
+        <button class="btn btn-outline" onclick="window.print()">Print</button>
+        <span class="btn">See You in Class ✓</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+function navTo(id){const el=document.getElementById(id);if(el){const offset=el.getBoundingClientRect().top+window.scrollY-110;window.scrollTo({top:offset,behavior:'smooth'})}}
+window.addEventListener('scroll',()=>{
+  const total=document.body.scrollHeight-window.innerHeight;
+  const pct=Math.min(100,(window.scrollY/total)*100);
+  document.getElementById('pb').style.width=pct+'%';
+  const min=Math.round((1-pct/100)*25);
+  document.getElementById('rt').textContent=min>0?'~'+min+' min left':'Done!';
+  document.querySelectorAll('nav a').forEach(a=>{a.classList.remove('active')});
+  const sections=['hook','los','what-is','factors','systems','environment','stakeholders','ownership','ready'];
+  for(let i=sections.length-1;i>=0;i--){
+    const s=document.getElementById(sections[i]);
+    if(s&&s.getBoundingClientRect().top<150){
+      const link=document.querySelectorAll('nav a')[i];
+      if(link)link.classList.add('active');
+      break;
+    }
+  }
+});
+function toggle(el){const box=el.querySelector('.check-box');box.classList.toggle('checked');box.textContent=box.classList.contains('checked')?'✓':'';}
+</script>
+</body>
+</html>
