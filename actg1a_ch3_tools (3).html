@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACTG 1A Ch. 3 — Interactive Tools</title>
+<style>
+  :root{--navy:#1A3A5C;--teal:#1E7A8C;--silver:#C8D8E8;--light:#EEF4F9;--white:#fff;--success:#2E7D32;--error:#B91C1C;--warn:#B45309;--text:#1A2D3F;--border:#A8C0D4;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:var(--light);color:var(--text);font-size:14px;}
+  header{background:var(--navy);color:white;padding:14px 20px;}
+  header h1{font-size:16px;font-weight:700;margin-bottom:2px;}
+  header p{font-size:12px;opacity:.75;}
+  .tabs{display:flex;background:var(--navy);padding:0 20px;gap:4px;overflow-x:auto;}
+  .tab{padding:9px 16px;background:rgba(255,255,255,.12);color:white;border:none;cursor:pointer;border-radius:6px 6px 0 0;font-size:12px;font-weight:600;white-space:nowrap;}
+  .tab.active{background:var(--light);color:var(--navy);}
+  .panel{display:none;padding:20px;}
+  .panel.active{display:block;}
+  h2{color:var(--navy);font-size:15px;margin-bottom:6px;}
+  h3{color:var(--teal);font-size:13px;margin-bottom:8px;}
+  .desc{background:var(--silver);border-left:4px solid var(--teal);padding:10px 14px;border-radius:0 6px 6px 0;margin-bottom:16px;font-size:13px;line-height:1.5;}
+  .card{background:white;border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px;}
+  label{font-weight:600;font-size:12px;color:var(--navy);display:block;margin-bottom:4px;}
+  input,select{padding:7px 10px;border:1px solid var(--border);border-radius:5px;font-size:13px;}
+  .btn{background:var(--teal);color:white;border:none;padding:9px 18px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;}
+  .btn:hover{background:var(--navy);}
+  .btn-sm{padding:5px 12px;font-size:12px;}
+  .btn-outline{background:white;color:var(--teal);border:2px solid var(--teal);}
+  .btn-outline:hover{background:var(--teal);color:white;}
+  .feedback{padding:10px;border-radius:6px;margin-top:10px;font-size:13px;}
+  .feedback.ok{background:#dcfce7;border:1px solid #86efac;color:#14532d;}
+  .feedback.err{background:#fee2e2;border:1px solid #fca5a5;color:var(--error);}
+  .feedback.info{background:#dbeafe;border:1px solid #93c5fd;color:#1e3a8a;}
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th{background:var(--navy);color:white;padding:7px 10px;text-align:left;}
+  td{padding:6px 10px;border-bottom:1px solid var(--border);}
+  tr:nth-child(even){background:var(--light);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:600px){.grid2{grid-template-columns:1fr;}}
+  .cycle-step{display:flex;align-items:center;cursor:pointer;padding:10px 14px;border-radius:8px;border:2px solid var(--border);margin-bottom:8px;transition:.2s;}
+  .cycle-step:hover{border-color:var(--teal);background:var(--light);}
+  .cycle-step.active{border-color:var(--teal);background:#e0f2fe;}
+  .step-num{width:32px;height:32px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;margin-right:12px;}
+  .step-info{flex:1;}
+  .step-title{font-weight:700;font-size:13px;color:var(--navy);}
+  .step-sub{font-size:11px;color:#666;margin-top:2px;}
+  .je-form{background:var(--light);border:1px solid var(--border);border-radius:8px;padding:14px;font-family:monospace;font-size:13px;}
+  .je-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;}
+  .je-indent{margin-left:30px;}
+  .ledger-acct{background:white;border:1px solid var(--border);border-radius:6px;margin-bottom:10px;overflow:hidden;}
+  .ledger-header{background:var(--navy);color:white;padding:6px 12px;font-size:12px;font-weight:700;display:flex;justify-content:space-between;}
+  .tb-total{background:var(--navy);color:white;font-weight:700;}
+  .progress{background:var(--border);border-radius:10px;height:8px;margin-top:8px;}
+  .progress-fill{background:var(--teal);height:100%;border-radius:10px;transition:.3s;}
+  .badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700;}
+  .badge-ch{background:var(--silver);color:var(--navy);}
+  .choice-btn{display:block;width:100%;text-align:left;background:white;border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin:5px 0;cursor:pointer;font-size:12px;}
+  .choice-btn:hover{border-color:var(--teal);background:var(--light);}
+  .choice-btn.correct{background:#dcfce7;border-color:#86efac;}
+  .choice-btn.wrong{background:#fee2e2;border-color:#fca5a5;}
+  code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:monospace;font-size:11px;}
+</style>
+</head>
+<body>
+<header>
+  <h1>📚 ACTG 1A — Chapter 3 Interactive Tools</h1>
+  <p>The Accounting Cycle: Journalizing, Posting & the Trial Balance · Foothill College · Prof. Wang-Nava</p>
+</header>
+<div class="tabs">
+  <button class="tab active" onclick="show(0)">① Cycle Map</button>
+  <button class="tab" onclick="show(1)">② Journal Entry Builder</button>
+  <button class="tab" onclick="show(2)">③ Ledger Simulator</button>
+  <button class="tab" onclick="show(3)">④ Trial Balance Checker</button>
+  <button class="tab" onclick="show(4)">⑤ Error Detective</button>
+  <button class="tab" onclick="show(5)">⑥ Cloud vs. Manual</button>
+</div>
+
+<!-- TOOL 1: Cycle Map -->
+<div class="panel active" id="p0">
+  <h2>① The Accounting Cycle — Interactive Map</h2>
+  <div class="desc">Click each step to learn what it involves, what inputs it needs, and what outputs it produces. Track which steps belong to Chapters 3, 4, and 5.</div>
+  <div class="grid2">
+    <div id="cycle-steps"></div>
+    <div class="card" id="cycle-detail">
+      <h3 id="cd-title" style="color:var(--navy)">Select a step to explore</h3>
+      <p id="cd-inputs" style="font-size:12px;margin:6px 0"></p>
+      <p id="cd-process" style="font-size:12px;margin:6px 0"></p>
+      <p id="cd-outputs" style="font-size:12px;margin:6px 0"></p>
+      <div id="cd-extra" style="margin-top:10px"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOOL 2: Journal Entry Builder -->
+<div class="panel" id="p1">
+  <h2>② Journal Entry Builder</h2>
+  <div class="desc">Build journal entries for Solano Photography's June transactions. Select the transaction, choose the debit and credit accounts, enter amounts, and check your work.</div>
+  <div class="card">
+    <h3>Select a Transaction</h3>
+    <select id="je-tx" onchange="loadTx()" style="width:100%;max-width:500px">
+      <option value="">-- Choose a transaction --</option>
+    </select>
+  </div>
+  <div class="card" id="je-panel" style="display:none">
+    <h3 id="je-tx-title"></h3>
+    <p id="je-tx-desc" style="font-size:12px;color:#555;margin-bottom:12px"></p>
+    <div class="je-form">
+      <div style="display:flex;gap:6px;font-size:11px;font-weight:700;color:var(--teal);margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--border)">
+        <span style="width:90px">Date</span><span style="flex:1">Account</span><span style="width:100px;text-align:right">Debit</span><span style="width:100px;text-align:right">Credit</span>
+      </div>
+      <div id="je-lines"></div>
+      <div style="margin-top:10px">
+        <label>Narration:</label>
+        <input type="text" id="je-narr" style="width:100%" placeholder="Describe the transaction and source document...">
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+      <button class="btn" onclick="checkJE()">Check Entry</button>
+      <button class="btn btn-outline btn-sm" onclick="showHint()">💡 Hint</button>
+    </div>
+    <div id="je-feedback"></div>
+  </div>
+  <div class="card">
+    <h3>Completed Entries</h3>
+    <div id="je-log" style="font-size:12px;color:#888"><em>No completed entries yet.</em></div>
+    <div class="progress"><div class="progress-fill" id="je-prog" style="width:0%"></div></div>
+    <p id="je-prog-text" style="font-size:11px;color:#666;margin-top:4px">0 of 8 transactions completed</p>
+  </div>
+</div>
+
+<!-- TOOL 3: Ledger Simulator -->
+<div class="panel" id="p2">
+  <h2>③ Ledger Posting Simulator</h2>
+  <div class="desc">Post Horizon Consulting's May journal entries to ledger accounts. Enter each amount on the correct side and update the running balance.</div>
+  <div class="card">
+    <label>Select Ledger Account</label>
+    <select id="ledger-acct" onchange="loadLedger()" style="width:240px">
+      <option value="">-- Choose Account --</option>
+      <option>Cash (1010)</option>
+      <option>Accounts Receivable (1030)</option>
+      <option>Service Revenue (4010)</option>
+      <option>Notes Payable (2100)</option>
+      <option>Equipment (1500)</option>
+      <option>Rent Expense (5010)</option>
+      <option>Salaries Expense (5020)</option>
+    </select>
+  </div>
+  <div id="ledger-panel"></div>
+</div>
+
+<!-- TOOL 4: Trial Balance Checker -->
+<div class="panel" id="p3">
+  <h2>④ Trial Balance Checker</h2>
+  <div class="desc">Enter account balances to prepare an unadjusted trial balance. The tool verifies that debits equal credits.</div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Enter Account Balances</h3>
+      <table>
+        <thead><tr><th>Account</th><th>Debit ($)</th><th>Credit ($)</th></tr></thead>
+        <tbody id="tb-body"></tbody>
+        <tfoot><tr class="tb-total"><td>TOTALS</td><td id="tb-dr-total">$0</td><td id="tb-cr-total">$0</td></tr></tfoot>
+      </table>
+      <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+        <button class="btn" onclick="checkTB()">Check Balance</button>
+        <button class="btn btn-outline btn-sm" onclick="loadHorizon()">Load Horizon Data</button>
+        <button class="btn btn-outline btn-sm" onclick="clearTB()">Clear</button>
+      </div>
+      <div id="tb-result"></div>
+    </div>
+    <div class="card">
+      <h3>Trial Balance Preview</h3>
+      <div id="tb-preview"><p style="color:#888;font-size:12px"><em>Enter balances and click Check Balance.</em></p></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOOL 5: Error Detective -->
+<div class="panel" id="p4">
+  <h2>⑤ Error Detective</h2>
+  <div class="desc">Three trial balances — each with one planted error. Analyze the difference, apply divisibility tests, and identify the error type.</div>
+  <div id="err-cases"></div>
+</div>
+
+<!-- TOOL 6: Cloud vs. Manual -->
+<div class="panel" id="p5">
+  <h2>⑥ Cloud vs. Manual Comparison</h2>
+  <div class="desc">For each accounting cycle step, compare the manual approach to the cloud/AI approach and identify what still requires human judgment.</div>
+  <div id="cloud-compare"></div>
+</div>
+
+<script>
+// TOOL 1: Cycle Map
+const cycleSteps=[
+  {n:1,title:'Identify & Analyze Transactions',ch:'Ch. 3',inputs:'Source documents',process:'Determine accounts affected, amounts, directions using the 3-question framework',outputs:'Transaction ready to record',cloud:'Bank feeds auto-import; AI identifies payee. Human verifies legitimacy and classification.',key:'AI cannot distinguish a legitimate transaction from a fraudulent one without human oversight.'},
+  {n:2,title:'Journalize',ch:'Ch. 3',inputs:'Analyzed transaction + source document',process:'Write journal entry: date, debits, credits, amounts, narration',outputs:'Dated journal entry in general journal',cloud:'AI auto-generates entries from bank feeds. Human reviews, corrects misclassifications, approves.',key:'Narrations are often inadequate in AI-generated entries. Accountants must enrich them.'},
+  {n:3,title:'Post to General Ledger',ch:'Ch. 3',inputs:'Approved journal entries',process:'Transfer amounts to ledger accounts; update running balances; cross-reference',outputs:'Updated general ledger',cloud:'Fully automatic in all cloud platforms upon approval.',key:'Accountants must still read the General Ledger Detail report to trace discrepancies.'},
+  {n:4,title:'Unadjusted Trial Balance',ch:'Ch. 3',inputs:'General ledger balances',process:'List all accounts; total debits and credits; verify equality',outputs:'Confirmation of mathematical accuracy',cloud:'Generated on-demand in real time. Always current.',key:'Accountants must review for unusual balances and missing accounts — not just equality.'},
+  {n:5,title:'Adjusting Entries',ch:'Ch. 4',inputs:'UTB + analysis of unrecorded items',process:'Record accruals, deferrals, depreciation, estimates',outputs:'Adjusting entries posted to ledger',cloud:'AI may suggest some adjustments. Most require human judgment.',key:'The most irreducibly human step. AI cannot determine what has been earned or incurred without being told.'},
+  {n:6,title:'Adjusted Trial Balance',ch:'Ch. 4',inputs:'UTB + adjusting entries',process:'Update balances; verify equality',outputs:'ATB ready for financial statements',cloud:'Auto-generated after adjustments. Accountant verifies.'},
+  {n:7,title:'Financial Statements',ch:'Ch. 4 & 5',inputs:'Adjusted trial balance',process:'Prepare Income Statement, RE Statement, Balance Sheet, SCF',outputs:'The four financial statements',cloud:'Auto-generated. Accountants review classification and narrative disclosures.'},
+  {n:8,title:'Closing Entries',ch:'Ch. 5',inputs:'Completed financial statements',process:'Close temporary accounts to Retained Earnings; reset to zero',outputs:'Closing entries posted; temporary accounts zeroed',cloud:'Automated at period-close. Accountant sets closing date and reviews.'},
+  {n:9,title:'Post-Closing Trial Balance',ch:'Ch. 5',inputs:'Ledger after closing',process:'Verify only permanent accounts have balances',outputs:'Cycle complete; books ready for next period',cloud:'Auto-generated. Accountant confirms all temporary accounts are zero.'},
+];
+function initCycleMap(){
+  document.getElementById('cycle-steps').innerHTML=cycleSteps.map((s,i)=>`
+    <div class="cycle-step" onclick="showStep(${i})">
+      <div class="step-num">${s.n}</div>
+      <div class="step-info">
+        <div class="step-title">${s.title}</div>
+        <div class="step-sub"><span class="badge badge-ch">${s.ch}</span></div>
+      </div>
+    </div>`).join('');
+}
+function showStep(i){
+  document.querySelectorAll('.cycle-step').forEach((el,j)=>el.classList.toggle('active',j===i));
+  const s=cycleSteps[i];
+  document.getElementById('cd-title').textContent=`Step ${s.n}: ${s.title}`;
+  document.getElementById('cd-inputs').innerHTML=`<strong>📥 Inputs:</strong> ${s.inputs}`;
+  document.getElementById('cd-process').innerHTML=`<strong>⚙️ Process:</strong> ${s.process}`;
+  document.getElementById('cd-outputs').innerHTML=`<strong>📤 Outputs:</strong> ${s.outputs}`;
+  document.getElementById('cd-extra').innerHTML=`
+    ${s.cloud?`<div class="feedback info" style="margin-bottom:6px"><strong>☁️ Cloud/AI:</strong> ${s.cloud}</div>`:''}
+    ${s.key?`<div class="feedback ok"><strong>🧠 Key Insight:</strong> ${s.key}</div>`:''}`;
+}
+initCycleMap();
+
+// TOOL 2: Journal Entry Builder
+const jeTxData=[
+  {id:'J1',date:'June 1',desc:'Owner invests $15,000 cash AND contributes camera equipment worth $8,000.',debitAccts:['Cash','Equipment'],creditAccts:["Owner's Capital"],debitAmts:[15000,8000],creditAmts:[23000],hint:'Two assets increase. One credit to Capital covers the full $23,000.'},
+  {id:'J2',date:'June 2',desc:'Pays $900 for June rent.',debitAccts:['Rent Expense'],creditAccts:['Cash'],debitAmts:[900],creditAmts:[900],hint:'Expense paid in cash. Rent Expense has a debit normal balance.'},
+  {id:'J3',date:'June 5',desc:'Photographs a wedding; collects $2,800 cash.',debitAccts:['Cash'],creditAccts:['Service Revenue'],debitAmts:[2800],creditAmts:[2800],hint:'Cash received when service performed. Record revenue now.'},
+  {id:'J4',date:'June 8',desc:'Sends Invoice #001 for $4,500 due in 30 days. No cash received yet.',debitAccts:['Accounts Receivable'],creditAccts:['Service Revenue'],debitAmts:[4500],creditAmts:[4500],hint:'Revenue earned but not collected. A receivable is created.'},
+  {id:'J5',date:'June 15',desc:'Collects $2,000 from Invoice #001 (partial payment).',debitAccts:['Cash'],creditAccts:['Accounts Receivable'],debitAmts:[2000],creditAmts:[2000],hint:'Collecting on existing receivable. No new revenue — it was recorded June 8.'},
+  {id:'J6',date:'June 20',desc:'Pays $1,200 in assistant wages.',debitAccts:['Salaries Expense'],creditAccts:['Cash'],debitAmts:[1200],creditAmts:[1200],hint:'Wages earned and paid same period. Salaries Expense has debit normal balance.'},
+  {id:'J7',date:'June 25',desc:'Receives $1,500 advance deposit for a July event.',debitAccts:['Cash'],creditAccts:['Unearned Revenue'],debitAmts:[1500],creditAmts:[1500],hint:'Cash received BEFORE service performed. Creates a liability — Unearned Revenue.'},
+  {id:'J8',date:'June 30',desc:'Owner withdraws $800 cash for personal use.',debitAccts:["Owner's Withdrawals"],creditAccts:['Cash'],debitAmts:[800],creditAmts:[800],hint:'Distribution to owner — not an expense. Use Owner\'s Withdrawals account.'},
+];
+const jeAccounts=['Cash','Accounts Receivable','Supplies','Equipment','Accounts Payable','Notes Payable','Unearned Revenue',"Owner's Capital","Owner's Withdrawals",'Service Revenue','Rent Expense','Salaries Expense','Utilities Expense'];
+let jeCompleted={},jeScore=0;
+function initJE(){
+  const sel=document.getElementById('je-tx');
+  jeTxData.forEach((t,i)=>sel.innerHTML+=`<option value="${i}">${t.id}: ${t.date} — ${t.desc.substring(0,45)}...</option>`);
+}
+function loadTx(){
+  const i=+document.getElementById('je-tx').value;
+  if(isNaN(i)||document.getElementById('je-tx').value==='')return;
+  const t=jeTxData[i];
+  document.getElementById('je-panel').style.display='block';
+  document.getElementById('je-tx-title').textContent=`${t.id}: ${t.date}`;
+  document.getElementById('je-tx-desc').textContent=t.desc;
+  const lines=document.getElementById('je-lines');
+  lines.innerHTML='';
+  t.debitAccts.forEach((_,j)=>{lines.innerHTML+=`<div class="je-row"><span style="width:90px;font-size:12px;color:#888">June ${t.date.split(' ')[1]}</span><select id="je-dr-acct-${j}" style="width:190px;font-size:12px;padding:5px"><option value="">Account...</option>${jeAccounts.map(a=>`<option>${a}</option>`).join('')}</select><input type="number" id="je-dr-amt-${j}" placeholder="Debit $" style="width:100px;text-align:right"><span style="width:100px"></span></div>`;});
+  t.creditAccts.forEach((_,j)=>{lines.innerHTML+=`<div class="je-row je-indent"><span style="width:90px"></span><select id="je-cr-acct-${j}" style="width:190px;font-size:12px;padding:5px;margin-left:20px"><option value="">Account...</option>${jeAccounts.map(a=>`<option>${a}</option>`).join('')}</select><span style="width:100px"></span><input type="number" id="je-cr-amt-${j}" placeholder="Credit $" style="width:100px;text-align:right"></div>`;});
+  document.getElementById('je-narr').value='';
+  document.getElementById('je-feedback').innerHTML='';
+}
+function checkJE(){
+  const i=+document.getElementById('je-tx').value;
+  if(isNaN(i))return;
+  const t=jeTxData[i];
+  let ok=true,msg='';
+  t.debitAccts.forEach((acct,j)=>{const a=document.getElementById(`je-dr-acct-${j}`)?.value;const v=parseFloat(document.getElementById(`je-dr-amt-${j}`)?.value)||0;const correct=a===acct&&Math.abs(v-t.debitAmts[j])<0.01;if(!correct){ok=false;msg+=`<div>Debit ${j+1}: Expected <code>${acct}</code> $${t.debitAmts[j].toLocaleString()}. Got: <code>${a||'?'}</code> $${v||'?'}</div>`;}});
+  t.creditAccts.forEach((acct,j)=>{const a=document.getElementById(`je-cr-acct-${j}`)?.value;const v=parseFloat(document.getElementById(`je-cr-amt-${j}`)?.value)||0;const correct=a===acct&&Math.abs(v-t.creditAmts[j])<0.01;if(!correct){ok=false;msg+=`<div>Credit ${j+1}: Expected <code>${acct}</code> $${t.creditAmts[j].toLocaleString()}. Got: <code>${a||'?'}</code> $${v||'?'}</div>`;}});
+  const narr=document.getElementById('je-narr').value.trim();
+  if(narr.length<10){ok=false;msg+='<div>⚠️ Narration too brief. Include the event and source document.</div>';}
+  if(ok&&!jeCompleted[i]){jeCompleted[i]=true;jeScore++;const log=document.getElementById('je-log');if(log.innerHTML.includes('No completed'))log.innerHTML='';log.innerHTML+=`<div style="border-bottom:1px dashed var(--border);padding:5px 0;font-size:12px"><strong>${t.id}:</strong> ${t.debitAccts.map((a,j)=>`Dr. ${a} $${t.debitAmts[j].toLocaleString()}`).join(' | ')} || ${t.creditAccts.map((a,j)=>`Cr. ${a} $${t.creditAmts[j].toLocaleString()}`).join(' | ')}</div>`;document.getElementById('je-prog').style.width=(jeScore/jeTxData.length*100)+'%';document.getElementById('je-prog-text').textContent=`${jeScore} of ${jeTxData.length} completed`;}
+  document.getElementById('je-feedback').innerHTML=`<div class="feedback ${ok?'ok':'err'}">${ok?'✅ Correct! Entry properly recorded.':'❌ Review: '+msg}</div>`;
+}
+function showHint(){const i=+document.getElementById('je-tx').value;if(isNaN(i))return;document.getElementById('je-feedback').innerHTML=`<div class="feedback info">💡 Hint: ${jeTxData[i].hint}</div>`;}
+initJE();
+
+// TOOL 3: Ledger Simulator
+const ledgerData={
+  'Cash (1010)':{nb:'Dr',entries:[{date:'May 1',ref:'J1',dr:25000,cr:0,bal:25000,note:'Owner investment'},{date:'May 2',ref:'J1',dr:0,cr:800,bal:24200,note:'Supplies'},{date:'May 3',ref:'J1',dr:0,cr:3000,bal:21200,note:'Equipment'},{date:'May 8',ref:'J1',dr:3500,cr:0,bal:24700,note:'Service revenue'},{date:'May 15',ref:'J1',dr:1500,cr:0,bal:26200,note:'Collect A/R'},{date:'May 18',ref:'J1',dr:0,cr:1200,bal:25000,note:'Rent'},{date:'May 20',ref:'J1',dr:0,cr:2000,bal:23000,note:'Salaries'},{date:'May 22',ref:'J1',dr:900,cr:0,bal:23900,note:'Advance'},{date:'May 28',ref:'J1',dr:0,cr:500,bal:23400,note:'Withdrawal'}]},
+  'Accounts Receivable (1030)':{nb:'Dr',entries:[{date:'May 12',ref:'J1',dr:2200,cr:0,bal:2200,note:'Credit sale'},{date:'May 15',ref:'J1',dr:0,cr:1500,bal:700,note:'Cash collected'}]},
+  'Service Revenue (4010)':{nb:'Cr',entries:[{date:'May 8',ref:'J1',dr:0,cr:3500,bal:3500,note:'Cash service'},{date:'May 12',ref:'J1',dr:0,cr:2200,bal:5700,note:'Credit service'}]},
+  'Notes Payable (2100)':{nb:'Cr',entries:[{date:'May 3',ref:'J1',dr:0,cr:5000,bal:5000,note:'Equipment note'}]},
+  'Equipment (1500)':{nb:'Dr',entries:[{date:'May 3',ref:'J1',dr:8000,cr:0,bal:8000,note:'Equipment purchase'}]},
+  'Rent Expense (5010)':{nb:'Dr',entries:[{date:'May 18',ref:'J1',dr:1200,cr:0,bal:1200,note:'May rent'}]},
+  'Salaries Expense (5020)':{nb:'Dr',entries:[{date:'May 20',ref:'J1',dr:2000,cr:0,bal:2000,note:'May salaries'}]},
+};
+let ledgerProgress={};
+function loadLedger(){
+  const acct=document.getElementById('ledger-acct').value;
+  if(!acct){document.getElementById('ledger-panel').innerHTML='';return;}
+  const data=ledgerData[acct];
+  if(!data){document.getElementById('ledger-panel').innerHTML='<div class="card"><em>Select from the available accounts.</em></div>';return;}
+  if(!ledgerProgress[acct])ledgerProgress[acct]=0;
+  renderLedger(acct,data);
+}
+function renderLedger(acct,data){
+  const prog=ledgerProgress[acct];
+  const rev=Math.min(prog,data.entries.length);
+  document.getElementById('ledger-panel').innerHTML=`<div class="card"><div class="ledger-acct"><div class="ledger-header"><span>${acct}</span><span>Normal Balance: ${data.nb}</span></div><table><thead><tr><th>Date</th><th>Description</th><th>Debit</th><th>Credit</th><th>Balance</th></tr></thead><tbody>${data.entries.slice(0,rev).map(e=>`<tr><td>${e.date}</td><td>${e.ref} — ${e.note}</td><td>${e.dr?'$'+e.dr.toLocaleString():''}</td><td>${e.cr?'$'+e.cr.toLocaleString():''}</td><td><strong>$${e.bal.toLocaleString()} ${data.nb}</strong></td></tr>`).join('')}${prog<data.entries.length?`<tr style="background:#fffbeb"><td>${data.entries[prog].date}</td><td>${data.entries[prog].ref} — ${data.entries[prog].note}</td><td><input type="number" id="post-dr" placeholder="0" style="width:75px;text-align:right;border:1px solid var(--border);border-radius:4px;padding:3px"></td><td><input type="number" id="post-cr" placeholder="0" style="width:75px;text-align:right;border:1px solid var(--border);border-radius:4px;padding:3px"></td><td><input type="number" id="post-bal" placeholder="Balance" style="width:85px;text-align:right;border:1px solid var(--border);border-radius:4px;padding:3px"></td></tr>`:''}</tbody></table></div>${prog<data.entries.length?`<button class="btn btn-sm" style="margin-top:10px" onclick="checkPost('${acct}')">Check Posting</button>`:`<div class="feedback ok" style="margin-top:10px">✅ All entries posted correctly!</div>`}<div id="ledger-fb"></div><div class="progress" style="margin-top:10px"><div class="progress-fill" style="width:${rev/data.entries.length*100}%"></div></div><p style="font-size:11px;color:#666;margin-top:4px">${rev}/${data.entries.length} entries posted</p></div>`;
+}
+function checkPost(acct){
+  const data=ledgerData[acct];const prog=ledgerProgress[acct];const e=data.entries[prog];
+  const dr=parseFloat(document.getElementById('post-dr')?.value)||0;
+  const cr=parseFloat(document.getElementById('post-cr')?.value)||0;
+  const bal=parseFloat(document.getElementById('post-bal')?.value)||0;
+  if(Math.abs(dr-e.dr)<0.01&&Math.abs(cr-e.cr)<0.01&&Math.abs(bal-e.bal)<0.01){ledgerProgress[acct]++;renderLedger(acct,data);}
+  else{document.getElementById('ledger-fb').innerHTML=`<div class="feedback err">Dr: ${Math.abs(dr-e.dr)<0.01?'✅':'❌ Expected $'+e.dr} | Cr: ${Math.abs(cr-e.cr)<0.01?'✅':'❌ Expected $'+e.cr} | Bal: ${Math.abs(bal-e.bal)<0.01?'✅':'❌ Expected $'+e.bal+' '+data.nb}</div>`;}
+}
+
+// TOOL 4: Trial Balance
+const tbAccounts=[{name:'Cash',nb:'dr'},{name:'Accounts Receivable',nb:'dr'},{name:'Supplies',nb:'dr'},{name:'Equipment',nb:'dr'},{name:'Notes Payable',nb:'cr'},{name:'Unearned Revenue',nb:'cr'},{name:"Owner's Capital",nb:'cr'},{name:"Owner's Withdrawals",nb:'dr'},{name:'Service Revenue',nb:'cr'},{name:'Rent Expense',nb:'dr'},{name:'Salaries Expense',nb:'dr'}];
+function initTB(){document.getElementById('tb-body').innerHTML=tbAccounts.map((a,i)=>`<tr><td style="font-size:12px">${a.name}</td><td><input type="number" id="tb-dr-${i}" onchange="calcTB()" style="width:100%;border:none;text-align:right;font-size:12px;padding:3px"></td><td><input type="number" id="tb-cr-${i}" onchange="calcTB()" style="width:100%;border:none;text-align:right;font-size:12px;padding:3px"></td></tr>`).join('');}
+function calcTB(){let dr=0,cr=0;tbAccounts.forEach((_,i)=>{dr+=parseFloat(document.getElementById(`tb-dr-${i}`)?.value)||0;cr+=parseFloat(document.getElementById(`tb-cr-${i}`)?.value)||0;});document.getElementById('tb-dr-total').textContent='$'+dr.toLocaleString();document.getElementById('tb-cr-total').textContent='$'+cr.toLocaleString();}
+function checkTB(){
+  let dr=0,cr=0;tbAccounts.forEach((_,i)=>{dr+=parseFloat(document.getElementById(`tb-dr-${i}`)?.value)||0;cr+=parseFloat(document.getElementById(`tb-cr-${i}`)?.value)||0;});
+  const diff=Math.abs(dr-cr);const ok=diff<0.01;
+  const preview=tbAccounts.map((a,i)=>{const d=parseFloat(document.getElementById(`tb-dr-${i}`)?.value)||0;const c=parseFloat(document.getElementById(`tb-cr-${i}`)?.value)||0;if(!d&&!c)return'';return`${a.name.padEnd(22)} ${d?('$'+d.toLocaleString()).padStart(9):'         '}  ${c?('$'+c.toLocaleString()).padStart(9):'         '}`;}).filter(Boolean).join('\n');
+  document.getElementById('tb-preview').innerHTML=`<pre style="font-size:11px">Unadjusted Trial Balance\n${'─'.repeat(42)}\n${preview}\n${'─'.repeat(42)}\nTotals                 ${('$'+dr.toLocaleString()).padStart(9)}  ${('$'+cr.toLocaleString()).padStart(9)}</pre>`;
+  let msg=ok?'✅ In balance! Debits = Credits.':'⚠️ Out of balance by $'+diff.toLocaleString()+'.';
+  if(!ok){if(diff%9<0.01)msg+=' Divisible by 9 — possible transposition.';else if(diff%2<0.01)msg+=' Divisible by 2 — possible wrong-side posting.';}
+  document.getElementById('tb-result').innerHTML=`<div class="feedback ${ok?'ok':'err'}" style="margin-top:10px">${msg}</div>`;
+}
+function loadHorizon(){const vals=[{d:23400,c:0},{d:700,c:0},{d:800,c:0},{d:8000,c:0},{d:0,c:5000},{d:0,c:900},{d:0,c:25000},{d:500,c:0},{d:0,c:5700},{d:1200,c:0},{d:2000,c:0}];vals.forEach((v,i)=>{const de=document.getElementById(`tb-dr-${i}`);const ce=document.getElementById(`tb-cr-${i}`);if(de)de.value=v.d||'';if(ce)ce.value=v.c||'';});calcTB();}
+function clearTB(){tbAccounts.forEach((_,i)=>{document.getElementById(`tb-dr-${i}`).value='';document.getElementById(`tb-cr-${i}`).value='';});calcTB();document.getElementById('tb-result').innerHTML='';document.getElementById('tb-preview').innerHTML='<p style="color:#888;font-size:12px"><em>Enter balances and click Check Balance.</em></p>';}
+initTB();
+
+// TOOL 5: Error Detective
+const errCases=[
+  {title:'Trial Balance A',dr:48720,cr:48360,diff:360,type:'Transposition',explain:'Salaries Expense of $3,600 was posted as $3,240 — a transposition (6 and 2 switched). Difference = $360, which is divisible by 9.',correction:'Dr. Salaries Expense $360 / Cr. Salaries Payable $360 — To correct transposition error; $3,600 should have been posted, $3,240 was recorded.'},
+  {title:'Trial Balance B',dr:62500,cr:58900,diff:3600,type:'Wrong-Side Posting',explain:'A $1,800 cash receipt was posted to the Credit side of Cash instead of Debit. This creates a $3,600 imbalance (2 × $1,800). Difference is divisible by 2.',correction:'Dr. Cash $3,600 — To correct wrong-side posting; $1,800 receipt was credited instead of debited, creating a $3,600 combined error.'},
+  {title:'Trial Balance C — Balanced!',dr:91450,cr:91450,diff:0,type:'Wrong Account (Balanced Error)',explain:'The trial balance BALANCES — but $2,400 rent was posted to Insurance Expense instead of Rent Expense. Both are debit-normal expense accounts, so the trial balance is unaffected. This error requires account-by-account review, not a divisibility test.',correction:'Dr. Rent Expense $2,400 / Cr. Insurance Expense $2,400 — To correct misclassification; rent payment posted to wrong expense account.'},
+];
+function initErrors(){
+  document.getElementById('err-cases').innerHTML=errCases.map((c,i)=>`
+    <div class="card">
+      <h3>🔍 ${c.title}</h3>
+      <div style="display:flex;gap:16px;margin-bottom:12px;font-size:13px;flex-wrap:wrap">
+        <div><strong>Debits:</strong> $${c.dr.toLocaleString()}</div>
+        <div><strong>Credits:</strong> $${c.cr.toLocaleString()}</div>
+        <div><strong>Difference:</strong> <span style="color:${c.diff===0?'var(--success)':'var(--error)'};font-weight:700">${c.diff===0?'$0 — Balanced':'$'+c.diff.toLocaleString()}</span></div>
+      </div>
+      <p style="font-size:12px;font-weight:600;margin-bottom:8px">Identify the error type:</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+        ${['Transposition','Slide','Wrong-Side Posting','Omission','Wrong Account (Balanced Error)'].map(t=>`<button class="choice-btn" style="width:auto;padding:5px 12px" onclick="identifyErr(${i},'${t}')">${t}</button>`).join('')}
+      </div>
+      <div id="err-fb-${i}"></div>
+    </div>`).join('');
+}
+function identifyErr(i,type){
+  const c=errCases[i];const ok=type===c.type;
+  document.getElementById(`err-fb-${i}`).innerHTML=`<div class="feedback ${ok?'ok':'err'}">
+    ${ok?`✅ Correct! This is a <strong>${c.type}</strong> error.`:`❌ This is actually a <strong>${c.type}</strong> error.`}
+    <div style="margin-top:8px;font-size:12px"><strong>Explanation:</strong> ${c.explain}</div>
+    <div style="margin-top:8px;font-size:12px;background:#f0fdf4;padding:8px;border-radius:4px"><strong>Correcting Entry:</strong> ${c.correction}</div>
+  </div>`;
+}
+initErrors();
+
+// TOOL 6: Cloud vs Manual
+const cloudData=[
+  {step:'Identify & Analyze',manual:'Review source documents; apply 3-question framework; determine accounts and amounts.',cloud:'Bank feeds auto-import; AI identifies payee and amount.',human:'Transaction legitimacy, completeness, proper classification, flagging unusual items.',insight:'"$4,200 — ADOBE INC" might be a software subscription or an accidental personal charge. Only a human who knows the business can decide.'},
+  {step:'Journalize',manual:'Write journal entries with date, accounts, amounts, narration.',cloud:'AI auto-generates entries; suggests account codes from history; auto-fills narrations from bank descriptions.',human:'Review account codes; correct misclassifications; write meaningful narrations; handle non-routine transactions.',insight:'"ACH PAYMENT - COMCAST" → auto-categorized as Utilities. Fine. "SQUARE $1,200" with no detail — revenue? Refund? Tax? Human judgment required.'},
+  {step:'Post to Ledger',manual:'Transfer amounts to ledger accounts; update running balances; cross-reference.',cloud:'Fully automatic upon entry approval.',human:'Near-zero for routine entries. Review GL Detail report to trace discrepancies.',insight:'Accountants must still read ledger reports to trace a balance during a review or audit.'},
+  {step:'Trial Balance',manual:'List all account balances; total columns; verify equality.',cloud:'Generated on-demand in real time.',human:'Review for unusual balances, missing accounts, revenue/expense accounts that seem too high or low.',insight:'A real-time trial balance is only useful to someone who knows what "reasonable" looks like for that business.'},
+  {step:'Adjusting Entries',manual:'Analyze accruals, deferrals, estimates; calculate amounts; record entries.',cloud:'AI may suggest recurring adjustments. Cannot independently determine what has been earned or incurred.',human:'All adjusting entries — this is the most irreducibly human step.',insight:'AI cannot estimate bad debt percentage, evaluate lawsuit probability, or determine how much prepaid insurance has expired.'},
+  {step:'Closing Entries',manual:'Close temporary accounts to Retained Earnings; verify post-closing TB.',cloud:'Automated at period-close.',human:'Set correct closing date; confirm all adjustments recorded before closing.',insight:'Closing too early — before all adjustments are in — is a common error. The human manages the sequence.'},
+];
+function initCloud(){
+  document.getElementById('cloud-compare').innerHTML=cloudData.map(d=>`
+    <div class="card">
+      <h3>${d.step}</h3>
+      <div class="grid2" style="gap:10px;margin-bottom:10px">
+        <div><p style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:4px">📝 Manual</p><p style="font-size:12px">${d.manual}</p></div>
+        <div><p style="font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;margin-bottom:4px">☁️ Cloud/AI</p><p style="font-size:12px">${d.cloud}</p></div>
+      </div>
+      <p style="font-size:11px;font-weight:700;color:var(--warn);text-transform:uppercase;margin-bottom:4px">🧠 Still Requires Human Judgment</p>
+      <p style="font-size:12px;margin-bottom:8px">${d.human}</p>
+      <div class="feedback info" style="font-size:12px"><strong>💡 Real-World Insight:</strong> ${d.insight}</div>
+    </div>`).join('');
+}
+initCloud();
+
+// Tab switching
+function show(i){
+  document.querySelectorAll('.panel').forEach((p,j)=>p.classList.toggle('active',j===i));
+  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',j===i));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACTG 1A Ch. 2 Study Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;600;700&display=swap');
+  :root{--navy:#1A3A5C;--teal:#1E7A8C;--silver:#C8D8E8;--light:#EEF4F9;--gold:#C9A84C;--white:#fff;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:#f0f4f8;display:flex;justify-content:center;padding:20px;font-size:13px;}
+  .page{background:white;width:850px;padding:0;box-shadow:0 4px 24px rgba(0,0,0,.12);}
+  .top-bar{background:var(--navy);color:white;padding:10px 24px;display:flex;justify-content:space-between;align-items:center;}
+  .top-bar h1{font-family:'Playfair Display',serif;font-size:18px;}
+  .top-bar p{font-size:11px;opacity:.75;}
+  .gold-bar{height:4px;background:linear-gradient(90deg,var(--navy),var(--teal),var(--gold));}
+  .body{padding:16px 24px;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .full{grid-column:1/-1;}
+  .section{background:var(--light);border-radius:8px;padding:12px 14px;border-left:4px solid var(--teal);}
+  .section.gold{border-left-color:var(--gold);}
+  .section.navy{border-left-color:var(--navy);background:#e8eef5;}
+  h2{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:8px;}
+  h2.gold{color:var(--gold);}
+  h2.navy{color:var(--navy);}
+  .eq-box{background:var(--navy);color:white;border-radius:8px;padding:12px;text-align:center;margin-bottom:8px;}
+  .eq-main{font-family:'Playfair Display',serif;font-size:22px;letter-spacing:1px;}
+  .eq-sub{font-size:11px;opacity:.75;margin-top:4px;}
+  .eq-expanded{font-size:12px;margin-top:6px;color:var(--silver);}
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  th{background:var(--navy);color:white;padding:5px 8px;text-align:left;font-size:11px;}
+  td{padding:4px 8px;border-bottom:1px solid var(--silver);}
+  tr:nth-child(even) td{background:rgba(200,216,232,.2);}
+  .badge{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:700;}
+  .dr{background:#dbeafe;color:#1e3a8a;}
+  .cr{background:#fce7f3;color:#831843;}
+  .inc{background:#dcfce7;color:#14532d;}
+  .dec{background:#fee2e2;color:#991b1b;}
+  .term-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+  .term{font-size:11px;padding:3px 0;border-bottom:1px dashed var(--silver);}
+  .term strong{color:var(--navy);}
+  .three-q{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:4px;}
+  .q-box{background:white;border:2px solid var(--teal);border-radius:6px;padding:8px;text-align:center;}
+  .q-num{font-size:18px;font-weight:700;color:var(--teal);}
+  .q-text{font-size:10px;color:#444;margin-top:2px;line-height:1.3;}
+  .fraud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:4px;}
+  .fraud-box{background:white;border-radius:6px;padding:8px;text-align:center;border:1px solid var(--silver);}
+  .fraud-icon{font-size:18px;}
+  .fraud-label{font-size:10px;font-weight:700;color:var(--navy);margin-top:2px;}
+  .fraud-desc{font-size:10px;color:#666;margin-top:2px;line-height:1.3;}
+  .mnemonic{background:var(--navy);color:white;border-radius:8px;padding:10px 14px;text-align:center;}
+  .mnemonic-letters{font-size:20px;font-weight:700;letter-spacing:6px;color:var(--gold);}
+  .mnemonic-words{font-size:10px;margin-top:4px;opacity:.8;line-height:1.8;}
+  .footer{background:var(--navy);color:white;padding:8px 24px;display:flex;justify-content:space-between;font-size:10px;opacity:.85;}
+  .alert{background:#fffbeb;border:1px solid var(--gold);border-radius:6px;padding:8px 12px;font-size:11px;margin-top:6px;}
+  .alert strong{color:var(--gold);}
+  @media print{body{background:white;padding:0;} .page{box-shadow:none;}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top-bar">
+    <div><h1>Chapter 2 Study Guide</h1><p>The Accounting Equation & Transaction Analysis</p></div>
+    <div style="text-align:right"><p style="font-size:13px;font-weight:700">ACTG 1A — Principios de Contabilidad</p><p>Prof. Wang-Nava | Foothill College | Spring 2026</p></div>
+  </div>
+  <div class="gold-bar"></div>
+  <div class="body">
+
+    <!-- Accounting Equation -->
+    <div class="section full">
+      <h2>The Accounting Equation</h2>
+      <div class="eq-box">
+        <div class="eq-main">Assets = Liabilities + Equity</div>
+        <div class="eq-sub">This equation MUST always balance — after every transaction, at every moment.</div>
+        <div class="eq-expanded">Expanded: Assets = Liabilities + Capital + Revenues − Expenses − Withdrawals</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px">
+        <div style="background:white;border-radius:6px;padding:8px;border-top:3px solid var(--teal)"><strong style="color:var(--navy);font-size:12px">Assets</strong><p style="font-size:11px;color:#555;margin-top:3px">Resources owned or controlled. Future economic benefit. Current (cash, A/R, supplies) + Non-current (equipment, intangibles).</p><p style="font-size:10px;color:var(--teal);margin-top:4px">→ Recorded at HISTORICAL COST</p></div>
+        <div style="background:white;border-radius:6px;padding:8px;border-top:3px solid #ef4444"><strong style="color:var(--navy);font-size:12px">Liabilities</strong><p style="font-size:11px;color:#555;margin-top:3px">Present obligations to outside parties. Current (A/P, wages payable, unearned revenue) + Long-term (notes payable, bonds).</p><p style="font-size:10px;color:#ef4444;margin-top:4px">→ Unearned Revenue = LIABILITY (not yet earned)</p></div>
+        <div style="background:white;border-radius:6px;padding:8px;border-top:3px solid var(--gold)"><strong style="color:var(--navy);font-size:12px">Equity</strong><p style="font-size:11px;color:#555;margin-top:3px">Residual interest = Assets − Liabilities. Increases with revenues; decreases with expenses and withdrawals.</p><p style="font-size:10px;color:var(--gold);margin-top:4px">→ Revenue ≠ Cash | Expense ≠ Cash Paid</p></div>
+      </div>
+    </div>
+
+    <!-- Three Question Framework -->
+    <div class="section">
+      <h2>3-Question Transaction Framework</h2>
+      <div class="three-q">
+        <div class="q-box"><div class="q-num">①</div><div class="q-text">Which accounts are affected?</div></div>
+        <div class="q-box"><div class="q-num">②</div><div class="q-text">By how much and in which direction?</div></div>
+        <div class="q-box"><div class="q-num">③</div><div class="q-text">Does the equation still balance?</div></div>
+      </div>
+      <div class="alert" style="margin-top:8px">
+        <strong>⚠️ Common Errors:</strong> Revenue ≠ Cash received. Collecting A/R = asset swap (no new revenue). Withdrawals ≠ expense. Advance received = liability (Unearned Revenue).
+      </div>
+    </div>
+
+    <!-- DEADC Mnemonic -->
+    <div class="section">
+      <h2>Debit/Credit Rules — DEADC</h2>
+      <div class="mnemonic">
+        <div class="mnemonic-letters">D E A D C</div>
+        <div class="mnemonic-words">
+          <strong style="color:var(--gold)">D</strong>ividends/Withdrawals &nbsp;·&nbsp; <strong style="color:var(--gold)">E</strong>xpenses &nbsp;·&nbsp; <strong style="color:var(--gold)">A</strong>ssets = <strong style="color:var(--silver)">D</strong>ebit Normal<br>
+          <strong style="color:var(--silver)">L</strong>iabilities &nbsp;·&nbsp; <strong style="color:var(--silver)">E</strong>quity &nbsp;·&nbsp; <strong style="color:var(--silver)">R</strong>evenues = <strong style="color:var(--silver)">C</strong>redit Normal
+        </div>
+      </div>
+      <table style="margin-top:8px">
+        <thead><tr><th>Account Type</th><th>Normal Balance</th><th>Increase</th><th>Decrease</th></tr></thead>
+        <tbody>
+          <tr><td>Assets</td><td><span class="badge dr">Debit</span></td><td><span class="badge dr">Dr</span></td><td><span class="badge cr">Cr</span></td></tr>
+          <tr><td>Liabilities</td><td><span class="badge cr">Credit</span></td><td><span class="badge cr">Cr</span></td><td><span class="badge dr">Dr</span></td></tr>
+          <tr><td>Equity / Capital</td><td><span class="badge cr">Credit</span></td><td><span class="badge cr">Cr</span></td><td><span class="badge dr">Dr</span></td></tr>
+          <tr><td>Revenues</td><td><span class="badge cr">Credit</span></td><td><span class="badge cr">Cr</span></td><td><span class="badge dr">Dr</span></td></tr>
+          <tr><td>Expenses</td><td><span class="badge dr">Debit</span></td><td><span class="badge dr">Dr</span></td><td><span class="badge cr">Cr</span></td></tr>
+          <tr><td>Withdrawals</td><td><span class="badge dr">Debit</span></td><td><span class="badge dr">Dr</span></td><td><span class="badge cr">Cr</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Key Terms -->
+    <div class="section">
+      <h2>Key Terms</h2>
+      <div class="term-grid">
+        <div class="term"><strong>Business Transaction</strong> — economic event that changes financial position; measurable in dollars</div>
+        <div class="term"><strong>Entity Assumption</strong> — business is separate from owner; no personal transactions in business records</div>
+        <div class="term"><strong>Monetary Unit</strong> — only events measurable in dollars are recorded</div>
+        <div class="term"><strong>Cost Principle</strong> — assets recorded at original acquisition cost, not market value</div>
+        <div class="term"><strong>Revenue</strong> — increases equity; recognized when EARNED, not when cash is received</div>
+        <div class="term"><strong>Matching Principle</strong> — expenses recognized same period as revenues they helped generate</div>
+        <div class="term"><strong>Unearned Revenue</strong> — cash received before service delivered; a LIABILITY</div>
+        <div class="term"><strong>Normal Balance</strong> — side of T-account on which increases are recorded</div>
+        <div class="term"><strong>Chart of Accounts</strong> — numbered master list of all business accounts</div>
+        <div class="term"><strong>Source Document</strong> — original evidence that a transaction occurred; basis for every entry</div>
+      </div>
+    </div>
+
+    <!-- Chart of Accounts -->
+    <div class="section">
+      <h2>Chart of Accounts — Numbering</h2>
+      <table>
+        <thead><tr><th>Range</th><th>Type</th><th>Normal Balance</th></tr></thead>
+        <tbody>
+          <tr><td>1000–1999</td><td>Assets</td><td><span class="badge dr">Debit</span></td></tr>
+          <tr><td>2000–2999</td><td>Liabilities</td><td><span class="badge cr">Credit</span></td></tr>
+          <tr><td>3000–3999</td><td>Equity</td><td><span class="badge cr">Credit</span></td></tr>
+          <tr><td>4000–4999</td><td>Revenues</td><td><span class="badge cr">Credit</span></td></tr>
+          <tr><td>5000–7999</td><td>Expenses</td><td><span class="badge dr">Debit</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Fraud Triangle -->
+    <div class="section gold full">
+      <h2 class="gold">⚠️ Ethics: The Fraud Triangle</h2>
+      <div class="fraud-grid">
+        <div class="fraud-box"><div class="fraud-icon">🔥</div><div class="fraud-label">Pressure</div><div class="fraud-desc">Financial stress, revenue targets, bonus tied to results, fear of bad news</div></div>
+        <div class="fraud-box"><div class="fraud-icon">🔓</div><div class="fraud-label">Opportunity</div><div class="fraud-desc">Weak controls, one person with too much access, no oversight or review</div></div>
+        <div class="fraud-box"><div class="fraud-icon">💭</div><div class="fraud-label">Rationalization</div><div class="fraud-desc">"I'll fix it next quarter" / "It's temporary" / "Everyone does it"</div></div>
+      </div>
+      <div class="alert"><strong>Remember:</strong> Every accounting fraud violates the equation. The equation is not just math — it is an integrity constraint. Recording a false entry requires breaking A = L + E, then concealing that break with another false entry.</div>
+    </div>
+
+  </div>
+  <div class="footer">
+    <span>ACTG 1A — Principios de Contabilidad | Foothill College OER | Spring 2026</span>
+    <span>Prof. Jose Wang-Nava, CPA (Ret.), MBA & Claude | Anthropic</span>
+  </div>
+</div>
+</body>
+</html>
